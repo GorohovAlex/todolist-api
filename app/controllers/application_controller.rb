@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+  include Trailblazer::Rails::Controller
   include JWTSessions::RailsAuthorization
   rescue_from JWTSessions::Errors::Unauthorized, with: :not_authorized
   rescue_from ActiveRecord::RecordNotFound, with: :not_found

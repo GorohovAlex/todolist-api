@@ -2,12 +2,12 @@ class Api::V1::UsersController < ApplicationController
   before_action :authorize_access_request!, only: [:sign_in]
 
   def create
-    user = User.new(user_params)
+    result = Users::Operation::Create.call(user_params)
 
-    if user.save
-      render json: serialize_model(user)
+    if result
+      render json: serialize_model(result[:model])
     else
-      render json: serialize_errors(user.errors), status: :unprocessable_entity
+      render json: serialize_errors(result[:errors]), status: :unprocessable_entity
     end
   end
 
