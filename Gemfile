@@ -21,6 +21,17 @@ end
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'rubocop', '~> 0.76.0', require: false
+  gem 'rubocop-performance', '~> 1.5', '>= 1.5.2', require: false
+  gem 'rubocop-rails', '~> 2.4', '>= 2.4.2', require: false
+  gem 'rubocop-rspec', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'factory_bot_rails'
+  gem 'rspec', '~> 3.9.0'
+  gem 'rspec-rails', '~> 4.0.0.beta4'
+  gem 'simplecov', require: false
 end
