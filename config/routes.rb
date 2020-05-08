@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resource :user, only: [:create]
-      post 'auth', to: 'auth#sign_up'
+      post   'auth',          to: 'users#create'
+      post   'auth/sign_in',  to: 'login#create'
+      delete 'auth/sign_out', to: 'login#destroy'
     end
   end
 end
