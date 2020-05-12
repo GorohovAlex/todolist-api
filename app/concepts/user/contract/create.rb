@@ -1,18 +1,15 @@
-require "reform"
-require "reform/form/dry"
+class User::Contract::Create < Reform::Form
+  property :username
+  property :password
+  property :password_confirmation
 
-module User::Contract
-  class Create < Reform::Form
-    include Dry
+  validates :username, length: { minimum: 3 }
+  validates_uniqueness_of :username
 
-    property :username
-    property :password
+  validates :password_confirmation, :password, presence: true
+  validate :password_ok?
 
-    # validates :username, length: 3..50
-
-    validation do
-      required(:username).filled(min_size?: 3, max_size?: 50)
-      required(:pasword).filled(min_size?: 6)
-    end
+  def password_ok?
+    errors.add(:password, I18n.t('errors.password_missmatch')) if password != password_confirmation
   end
 end
