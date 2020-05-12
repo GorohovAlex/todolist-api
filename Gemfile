@@ -5,13 +5,19 @@ ruby '2.6.3'
 
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'dry-monads', '~> 1.3', '>= 1.3.5'
+gem 'dry-validation', '~> 1.5'
 gem 'jsonapi-serializers'
 gem 'jwt_sessions'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
+gem 'pundit'
 gem 'rack-cors'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
-gem 'trailblazer-rails'
+gem 'reform', '~> 2.3.0.rc1'
+gem 'reform-rails', '~> 0.2.0.rc2'
+gem 'trailblazer', '~> 2.1.0.rc1'
+gem 'trailblazer-rails', '~> 2.1', '>= 2.1.7'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

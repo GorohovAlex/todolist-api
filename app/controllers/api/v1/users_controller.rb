@@ -2,8 +2,7 @@ class Api::V1::UsersController < ApplicationController
   before_action :authorize_access_request!, only: [:sign_in]
 
   def create
-    result = Users::Operation::Create.call(user_params)
-
+    result = User::Operation::Create.call(params: user_params, current_user: nil)
     if result
       render json: serialize_model(result[:model])
     else
