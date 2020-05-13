@@ -4,6 +4,8 @@ Rails.application.routes.draw do
       post   'auth',          to: 'users#create'
       post   'auth/sign_in',  to: 'login#create'
       delete 'auth/sign_out', to: 'login#destroy'
+
+      resources :projects, only: [:create, :update, :destroy]
     end
   end
 end
