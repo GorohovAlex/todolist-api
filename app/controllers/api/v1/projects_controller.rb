@@ -31,12 +31,7 @@ class Api::V1::ProjectsController < ApplicationController
   end
 
   def destroy
-    result = Project::Operation::Delete.call(params: params, current_user: current_user)
-
-    if result.success?
-      render json: nil, status: 204
-    else
-      render json: serialize_errors(result[:model].errors.messages), status: :unprocessable_entity
-    end
+    Project::Operation::Delete.call(params: params, current_user: current_user)
+    render json: nil, status: 204
   end
 end

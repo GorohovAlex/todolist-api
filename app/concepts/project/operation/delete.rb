@@ -1,11 +1,11 @@
 module Project::Operation
   class Delete < Trailblazer::Operation
-    step Policy::Pundit(ProjectPolicy, :destroy?)
     step :model!
-    step :delete!
+    step Policy::Pundit(ProjectPolicy, :destroy?)
+    pass :delete!
 
-    def model!(options, current_user:, id:, **)
-      options[:model] = Pundit.policy_scope(current_user, Project.find_by(id))
+    def model!(options, params:, current_user:, **)
+      options[:model] = Pundit.policy_scope(current_user, Project).find_by(id: params[:id])
     end
 
     def delete!(_options, model:, **)

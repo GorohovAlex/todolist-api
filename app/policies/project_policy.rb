@@ -8,7 +8,7 @@ class ProjectPolicy < ApplicationPolicy
   end
 
   def update?
-    true if user.present? && user == record&.user
+    record.user.eql?(user)
   end
 
   def destroy?
