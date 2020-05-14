@@ -24,6 +24,8 @@
 /config/credentials/development.key
 
 /config/credentials/test.key
+
+/node_modules/*
 /coverage/*
 
 /node_modules/*

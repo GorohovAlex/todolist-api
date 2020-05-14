@@ -9,8 +9,8 @@ gem 'dry-monads', '~> 1.3', '>= 1.3.5'
 gem 'dry-validation'
 gem 'jsonapi-serializers'
 gem 'jwt_sessions'
-gem 'pg', '>= 0.18', '< 2.0'
 gem 'multi_json'
+gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 gem 'pundit'
 gem 'rack-cors'
@@ -37,6 +37,7 @@ group :development do
 end
 
 group :test do
+  gem 'dox', require: false
   gem 'json_matchers'
   gem 'rspec-rails', '~> 4.0.0.beta4'
   gem 'shoulda-matchers'
