@@ -1,11 +1,20 @@
 class Api::V1::ProjectsController < ApplicationController
   before_action :authorize_access_request!
 
+  def index
+    result = Project::Operation::Index.call(params: params, current_user: current_user)
+    if result.success?
+      render json: serialize_models(result[:model]), status: :ok
+    else
+      render json: serialize_errors(result[:model].errors.messages), status: :unprocessable_entity
+    end
+  end
+
   def create
-    result = Project::Operation::Create.call(params: project_params, current_user: current_user)
+    result = Project::Operation::Create.call(params: params, current_user: current_user)
 
     if result.success?
-      render json: serialize_model(result[:model])
+      render json: serialize_model(result[:model]), status: 201
     else
       render json: serialize_errors(result[:model].errors.messages), status: :unprocessable_entity
     end
@@ -29,11 +38,5 @@ class Api::V1::ProjectsController < ApplicationController
     else
       render json: serialize_errors(result[:model].errors.messages), status: :unprocessable_entity
     end
-  end
-
-  private
-
-  def project_params
-    params.require(:project).permit(:name).merge(user_id: current_user.id)
   end
 end

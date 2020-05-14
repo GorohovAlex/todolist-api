@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       post   'auth/sign_in',  to: 'login#create'
       delete 'auth/sign_out', to: 'login#destroy'
 
-      resources :projects, only: [:create, :update, :destroy]
+      resources :projects, only: %i[index create update destroy]
     end
   end
 end
