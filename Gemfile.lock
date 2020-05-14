@@ -118,6 +118,9 @@ GEM
       dry-equalizer (~> 0.2)
       dry-initializer (~> 3.0)
       dry-schema (~> 1.5)
+    dox (1.2.0)
+      rails (>= 4.0)
+      rspec-core
     erubi (1.9.0)
     factory_bot (5.2.0)
       activesupport (>= 4.2.0)
@@ -317,6 +320,7 @@ DEPENDENCIES
   factory_bot_rails
   ffaker
   json_matchers
+  dox
   jsonapi-serializers
   jwt_sessions
   listen (>= 3.0.5, < 3.2)
