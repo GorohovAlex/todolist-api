@@ -1,5 +1,4 @@
 RSpec.describe 'Session', type: :request do
-  
   describe 'when POST /auth/sign_in' do
     let(:user_params) { { username: 'string', password: 'string' } }
     let!(:user) { User.create(user_params) }
@@ -40,7 +39,7 @@ RSpec.describe 'Session', type: :request do
     context 'when authorized user' do
       it do
         delete api_v1_auth_sign_out_path, headers: authenticated_header(user)
-        expect(response).to have_http_status(204)
+        expect(response).to have_http_status(:no_content)
       end
     end
 
