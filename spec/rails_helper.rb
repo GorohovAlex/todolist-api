@@ -1,7 +1,11 @@
 require 'simplecov'
 
 SimpleCov.minimum_coverage 90
-SimpleCov.start 'rails'
+SimpleCov.start 'rails' do
+  add_filter '/app/channels/'
+  add_filter '/app/jobs/'
+  add_filter '/app/mailers/'
+end
 
 ENV['RAILS_ENV'] ||= 'test'
 
@@ -24,6 +28,7 @@ RSpec.configure do |config|
   # config.include OmniAuthTestHelper, type: :controller
   # config.include Warden::Test::Helpers, type: :feature
   # config.include MoneyRails::ActionViewExtension, type: :feature
+  config.include ApiHelper, type: :request
   config.filter_rails_from_backtrace!
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.infer_spec_type_from_file_location!
