@@ -1,18 +1,11 @@
 class Api::V1::UsersController < ApplicationController
-  before_action :authorize_access_request!, only: [:sign_in]
   def create
-    result = User::Operation::Create.call(params: user_params, current_user: nil)
+    result = User::Operation::Create.call(params: params, current_user: nil)
 
     if result.success?
-      render json: serialize_model(result[:model])
+      render json: serialize_model(result[:model]), status: :created
     else
-      render json: serialize_errors(result[:model].errors.messages), status: :unprocessable_entity
+      render json: serialize_errors(result['result.contract.default'].errors.messages), status: :unprocessable_entity
     end
-  end
-
-  private
-
-  def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation)
   end
 end

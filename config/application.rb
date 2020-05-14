@@ -42,8 +42,8 @@ module TodolistApi
       g.stylesheets = false
     end
 
-    config.autoload_paths += %W(
+    config.autoload_paths += %W[
       #{config.root}/app/concepts/**/*
-    )
+    ]
   end
 end
