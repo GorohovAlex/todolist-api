@@ -4,7 +4,7 @@ class Api::V1::TasksController < ApplicationController
   def index
     result = Task::Operation::Index.call(params: params, current_user: current_user)
     if result.success?
-      render json: serialize_models(result[:model]), status: :created
+      render json: serialize_models(result[:model]), status: :ok
     else
       render json: serialize_errors(result[:errors].errors.messages), status: :unprocessable_entity
     end
@@ -22,16 +22,16 @@ class Api::V1::TasksController < ApplicationController
   def show
     result = Task::Operation::Show.call(params: params, current_user: current_user)
     if result.success?
-      render json: serialize_model(result[:model]), status: :created
+      render json: serialize_model(result[:model]), status: :ok
     else
       render json: serialize_errors(result['errors'].errors.messages), status: :unprocessable_entity
     end
   end
-   
+
   def update
     result = Task::Operation::Update.call(params: params, current_user: current_user)
     if result.success?
-      render json: serialize_model(result[:model]), status: :created
+      render json: serialize_model(result[:model]), status: :ok
     else
       render json: serialize_errors(result['result.contract.default'].errors.messages), status: :unprocessable_entity
     end
@@ -39,6 +39,6 @@ class Api::V1::TasksController < ApplicationController
 
   def destroy
     Task::Operation::Delete.call(params: params, current_user: current_user)
-    render json: nil, status: 204
+    render json: nil, status: :no_content
   end
 end
