@@ -314,7 +314,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts_as_list
+  acts_as_list (~> 1.0, >= 1.0.1)
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
   byebug
