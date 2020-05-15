@@ -1,7 +1,6 @@
 RSpec.describe 'Session', type: :request do
-  
   describe 'when POST /auth/sign_in' do
-    let(:user_params) { { username: 'string', password: 'string' } }
+    let(:user_params) { attributes_for(:user) }
     let!(:user) { User.create(user_params) }
     let(:params) { user_params }
 
@@ -10,7 +9,7 @@ RSpec.describe 'Session', type: :request do
         it 'return user data' do
           post api_v1_auth_sign_in_path, params: params
           expect(response).to have_http_status(:ok)
-          # expect(response).to match_response_schema('user/create')
+          expect(response).to match_response_schema('session/create')
         end
       end
 
