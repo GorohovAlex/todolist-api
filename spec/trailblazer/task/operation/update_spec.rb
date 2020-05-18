@@ -4,7 +4,7 @@ RSpec.describe Task::Operation::Update do
   let(:user) { create(:user) }
   let(:project) { create(:project, user: user) }
   let(:task) { create(:task, project: project) }
-  let(:params) { { task: attributes_for(:task), id: task.id } }
+  let(:params) { { task: attributes_for(:task), state: true, id: task.id } }
 
   describe 'when valid data' do
     it { expect(result.success?).to be true }

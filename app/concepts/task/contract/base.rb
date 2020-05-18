@@ -2,6 +2,7 @@ class Task::Contract::Base < Reform::Form
   property :name
   property :project_id
   property :deadline
+  property :state
 
   validates :name, presence: true
   validates :project_id, presence: true, numericality: true
@@ -16,7 +17,7 @@ class Task::Contract::Base < Reform::Form
         rescue StandardError
           ArgumentError
          end) == ArgumentError
-      errors.add(:deadline, 'must be a valid datetime')
+      errors.add(:deadline, I18n.t('errors.deadline'))
      end
   end
 end
