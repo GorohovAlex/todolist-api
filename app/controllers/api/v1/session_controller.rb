@@ -12,7 +12,7 @@ class Api::V1::SessionController < ApplicationController
   end
 
   def destroy
-    result = Session::Operation::Delete.call(params: params, payload: payload)
-    render json: nil, status: 204
+    Session::Operation::Delete.call(params: params, payload: payload)
+    render json: nil, status: :no_content
   end
 end
