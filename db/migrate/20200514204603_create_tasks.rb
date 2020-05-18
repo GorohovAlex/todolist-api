@@ -4,6 +4,7 @@ class CreateTasks < ActiveRecord::Migration[6.0]
       t.string :name
       t.references :project, foreign_key: { on_delete: :cascade }
       t.boolean :change, default: false
+      t.datetime :deadline
 
       t.timestamps
     end

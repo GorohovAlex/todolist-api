@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_05_14_205630) do
     t.string "name"
     t.bigint "project_id"
     t.boolean "change", default: false
+    t.datetime "deadline"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "position"
