@@ -1,7 +1,7 @@
 class Session::Operation::Create < Trailblazer::Operation
   step :model!
   step :authenticate!
-  fail :authorize_error!
+  fail :authenticate_error!
   step :session!
 
   def model!(options, params:, **)
@@ -12,7 +12,7 @@ class Session::Operation::Create < Trailblazer::Operation
     model.authenticate(params[:password])
   end
 
-  def authorize_error!(options, **)
+  def authenticate_error!(options, **)
     options[:errors] = { user: I18n.t('errors.username_and_password') }
   end
 
