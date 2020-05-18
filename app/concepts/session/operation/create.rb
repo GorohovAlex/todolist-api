@@ -1,6 +1,6 @@
 class Session::Operation::Create < Trailblazer::Operation
   step :model!
-  step :authorize!
+  step :authenticate!
   fail :authorize_error!
   step :session!
 
@@ -8,7 +8,7 @@ class Session::Operation::Create < Trailblazer::Operation
     options[:model] = User.find_by!(username: params[:username])
   end
 
-  def authorize!(_options, params:, model:, **)
+  def authenticate!(_options, params:, model:, **)
     model.authenticate(params[:password])
   end
 
