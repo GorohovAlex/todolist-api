@@ -39,7 +39,7 @@ RSpec.describe 'Session', type: :request do
     context 'when authorized user' do
       it do
         delete api_v1_auth_sign_out_path, headers: authenticated_header(user)
-        expect(response).to have_http_status(204)
+        expect(response).to have_http_status(:no_content)
       end
     end
 

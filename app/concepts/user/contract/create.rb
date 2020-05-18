@@ -1,5 +1,5 @@
 class User::Contract::Create < Reform::Form
-  USERNAME_LENGTH = 3..50.freeze
+  USERNAME_LENGTH = (3..50).freeze
   PASSWORD_MIN_LENGTH = 6
 
   property :username
