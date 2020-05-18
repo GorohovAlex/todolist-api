@@ -14,7 +14,7 @@ class Api::V1::ProjectsController < ApplicationController
     result = Project::Operation::Create.call(params: params, current_user: current_user)
 
     if result.success?
-      render json: serialize_model(result[:model]), status: 201
+      render json: serialize_model(result[:model]), status: :created
     else
       render json: serialize_errors(result[:model].errors.messages), status: :unprocessable_entity
     end
@@ -32,6 +32,6 @@ class Api::V1::ProjectsController < ApplicationController
 
   def destroy
     Project::Operation::Delete.call(params: params, current_user: current_user)
-    render json: nil, status: 204
+    render json: nil, status: :no_content
   end
 end
