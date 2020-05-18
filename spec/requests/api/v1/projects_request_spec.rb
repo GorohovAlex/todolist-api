@@ -24,7 +24,7 @@ RSpec.describe 'Projects', type: :request do
   end
 
   describe 'when POST /projects' do
-    let(:params) { { project: { name: FFaker::Lorem.phrase } } }
+    let(:params) { { project: attributes_for(:project) } }
 
     context 'when authorized user' do
       context 'when valid data' do
@@ -54,7 +54,7 @@ RSpec.describe 'Projects', type: :request do
   end
 
   describe 'when PUT /projects/:id' do
-    let(:params) { { project: { name: FFaker::Lorem.phrase } } }
+    let(:params) { { project: attributes_for(:project) } }
 
     context 'when authorized user' do
       context 'when valid data' do
