@@ -10,6 +10,13 @@ RSpec.describe 'Tasks', type: :request do
         expect(response).to have_http_status(:ok)
         expect(response).to match_response_schema('task/index')
       end
+
+      context 'when invalid project_id' do
+        it do
+          get api_v1_project_tasks_path(project_id: 0), headers: authenticated_header(user)
+          expect(response).to have_http_status(:unprocessable_entity)
+        end
+      end
     end
 
     context 'when not authorized user' do
@@ -45,6 +52,28 @@ RSpec.describe 'Tasks', type: :request do
     context 'when not authorized user' do
       it do
         post api_v1_project_tasks_path(project_id: project.id), params: params
+        expect(response).to have_http_status(:unauthorized)
+      end
+    end
+  end
+
+  describe 'when GET /tasks/:id' do
+    context 'when authorized user', :dox do
+      it 'send valid id' do
+        get api_v1_task_path(task.id), headers: authenticated_header(user)
+        expect(response).to have_http_status(:ok)
+        expect(response).to match_response_schema('task/create')
+      end
+
+      it 'send invalid id' do
+        get api_v1_task_path(0), headers: authenticated_header(user)
+        expect(response).to have_http_status(:not_found)
+      end
+    end
+
+    context 'when not authorized user' do
+      it do
+        get api_v1_task_path(task.id)
         expect(response).to have_http_status(:unauthorized)
       end
     end
