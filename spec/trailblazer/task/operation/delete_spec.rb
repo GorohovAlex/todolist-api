@@ -12,7 +12,7 @@ RSpec.describe Task::Operation::Delete do
 
   describe 'when invalid data' do
     let(:params) { {} }
-    
+
     it { expect { result }.to raise_error(ActiveRecord::RecordNotFound) }
   end
 end

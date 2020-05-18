@@ -6,7 +6,7 @@ class Api::V1::TasksController < ApplicationController
     if result.success?
       render json: serialize_models(result[:model]), status: :ok
     else
-      render json: serialize_errors(result[:errors].errors.messages), status: :unprocessable_entity
+      render json: serialize_errors(result[:errors]), status: :unprocessable_entity
     end
   end
 
@@ -21,11 +21,7 @@ class Api::V1::TasksController < ApplicationController
 
   def show
     result = Task::Operation::Show.call(params: params, current_user: current_user)
-    if result.success?
-      render json: serialize_model(result[:model]), status: :ok
-    else
-      render json: serialize_errors(result['errors'].errors.messages), status: :unprocessable_entity
-    end
+    render json: serialize_model(result[:model]), status: :ok
   end
 
   def update
