@@ -30,6 +30,6 @@ class ApplicationController < ActionController::API
   end
 
   def not_found(errors)
-    render json: serialize_errors(errors), status: 404
+    render json: serialize_errors(errors), status: :not_found
   end
 end
