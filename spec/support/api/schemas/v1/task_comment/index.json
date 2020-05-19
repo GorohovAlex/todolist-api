@@ -1,0 +1,359 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+      {
+          "data": [
+              {
+                  "type": "task-comments",
+                  "id": "1",
+                  "attributes": {
+                      "comment": "vsvfvfd",
+                      "task-id": 1,
+                      "image": {
+                          "url": null
+                      },
+                      "created-at": "2020-05-19T07:40:55.509Z",
+                      "updated-at": "2020-05-19T07:40:55.509Z"
+                  },
+                  "links": {
+                      "self": "/api/v1/task-comments/1"
+                  }
+              },
+              {
+                  "type": "task-comments",
+                  "id": "2",
+                  "attributes": {
+                      "comment": "vsvfvfd",
+                      "task-id": 1,
+                      "image": {
+                          "url": null
+                      },
+                      "created-at": "2020-05-19T07:41:35.979Z",
+                      "updated-at": "2020-05-19T07:41:35.979Z"
+                  },
+                  "links": {
+                      "self": "/api/v1/task-comments/2"
+                  }
+              },
+              {
+                  "type": "task-comments",
+                  "id": "3",
+                  "attributes": {
+                      "comment": "vsvfvfd",
+                      "task-id": 1,
+                      "image": {
+                          "url": null
+                      },
+                      "created-at": "2020-05-19T07:44:54.609Z",
+                      "updated-at": "2020-05-19T07:44:54.609Z"
+                  },
+                  "links": {
+                      "self": "/api/v1/task-comments/3"
+                  }
+              },
+              {
+                  "type": "task-comments",
+                  "id": "4",
+                  "attributes": {
+                      "comment": "vsvfvfd",
+                      "task-id": 1,
+                      "image": {
+                          "url": null
+                      },
+                      "created-at": "2020-05-19T08:04:11.921Z",
+                      "updated-at": "2020-05-19T08:04:11.921Z"
+                  },
+                  "links": {
+                      "self": "/api/v1/task-comments/4"
+                  }
+              },
+              {
+                  "type": "task-comments",
+                  "id": "5",
+                  "attributes": {
+                      "comment": "vsvfvfd",
+                      "task-id": 1,
+                      "image": {
+                          "url": null
+                      },
+                      "created-at": "2020-05-19T08:07:21.104Z",
+                      "updated-at": "2020-05-19T08:07:21.104Z"
+                  },
+                  "links": {
+                      "self": "/api/v1/task-comments/5"
+                  }
+              },
+              {
+                  "type": "task-comments",
+                  "id": "6",
+                  "attributes": {
+                      "comment": "text",
+                      "task-id": 1,
+                      "image": {
+                          "url": "/uploads/task_comment/image/6/preview.jpg"
+                      },
+                      "created-at": "2020-05-19T08:07:54.285Z",
+                      "updated-at": "2020-05-19T08:07:54.285Z"
+                  },
+                  "links": {
+                      "self": "/api/v1/task-comments/6"
+                  }
+              },
+              {
+                  "type": "task-comments",
+                  "id": "7",
+                  "attributes": {
+                      "comment": "text",
+                      "task-id": 1,
+                      "image": {
+                          "url": "/uploads/task_comment/image/7/preview.jpg"
+                      },
+                      "created-at": "2020-05-19T08:24:25.201Z",
+                      "updated-at": "2020-05-19T08:24:25.201Z"
+                  },
+                  "links": {
+                      "self": "/api/v1/task-comments/7"
+                  }
+              }
+          ]
+      }
+  ],
+  "required": [
+      "data"
+  ],
+  "additionalProperties": true,
+  "properties": {
+      "data": {
+          "$id": "#/properties/data",
+          "type": "array",
+          "title": "The data schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "examples": [
+              [
+                  {
+                      "type": "task-comments",
+                      "id": "1",
+                      "attributes": {
+                          "comment": "vsvfvfd",
+                          "task-id": 1,
+                          "image": {
+                              "url": null
+                          },
+                          "created-at": "2020-05-19T07:40:55.509Z",
+                          "updated-at": "2020-05-19T07:40:55.509Z"
+                      },
+                      "links": {
+                          "self": "/api/v1/task-comments/1"
+                      }
+                  },
+                  {
+                      "type": "task-comments",
+                      "id": "2",
+                      "attributes": {
+                          "comment": "vsvfvfd",
+                          "task-id": 1,
+                          "image": {
+                              "url": null
+                          },
+                          "created-at": "2020-05-19T07:41:35.979Z",
+                          "updated-at": "2020-05-19T07:41:35.979Z"
+                      },
+                      "links": {
+                          "self": "/api/v1/task-comments/2"
+                      }
+                  }
+              ]
+          ],
+          "additionalItems": true,
+          "items": {
+              "anyOf": [
+                  {
+                      "$id": "#/properties/data/items/anyOf/0",
+                      "type": "object",
+                      "title": "The first anyOf schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": {},
+                      "examples": [
+                          {
+                              "type": "task-comments",
+                              "id": "1",
+                              "attributes": {
+                                  "comment": "vsvfvfd",
+                                  "task-id": 1,
+                                  "image": {
+                                      "url": null
+                                  },
+                                  "created-at": "2020-05-19T07:40:55.509Z",
+                                  "updated-at": "2020-05-19T07:40:55.509Z"
+                              },
+                              "links": {
+                                  "self": "/api/v1/task-comments/1"
+                              }
+                          }
+                      ],
+                      "required": [
+                          "type",
+                          "id",
+                          "attributes",
+                          "links"
+                      ],
+                      "additionalProperties": true,
+                      "properties": {
+                          "type": {
+                              "$id": "#/properties/data/items/anyOf/0/properties/type",
+                              "type": "string",
+                              "title": "The type schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": "",
+                              "examples": [
+                                  "task-comments"
+                              ]
+                          },
+                          "id": {
+                              "$id": "#/properties/data/items/anyOf/0/properties/id",
+                              "type": "string",
+                              "title": "The id schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": "",
+                              "examples": [
+                                  "1"
+                              ]
+                          },
+                          "attributes": {
+                              "$id": "#/properties/data/items/anyOf/0/properties/attributes",
+                              "type": "object",
+                              "title": "The attributes schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": {},
+                              "examples": [
+                                  {
+                                      "comment": "vsvfvfd",
+                                      "task-id": 1,
+                                      "image": {
+                                          "url": null
+                                      },
+                                      "created-at": "2020-05-19T07:40:55.509Z",
+                                      "updated-at": "2020-05-19T07:40:55.509Z"
+                                  }
+                              ],
+                              "required": [
+                                  "comment",
+                                  "task-id",
+                                  "image",
+                                  "created-at",
+                                  "updated-at"
+                              ],
+                              "additionalProperties": true,
+                              "properties": {
+                                  "comment": {
+                                      "$id": "#/properties/data/items/anyOf/0/properties/attributes/properties/comment",
+                                      "type": "string",
+                                      "title": "The comment schema",
+                                      "description": "An explanation about the purpose of this instance.",
+                                      "default": "",
+                                      "examples": [
+                                          "vsvfvfd"
+                                      ]
+                                  },
+                                  "task-id": {
+                                      "$id": "#/properties/data/items/anyOf/0/properties/attributes/properties/task-id",
+                                      "type": "integer",
+                                      "title": "The task-id schema",
+                                      "description": "An explanation about the purpose of this instance.",
+                                      "default": 0,
+                                      "examples": [
+                                          1
+                                      ]
+                                  },
+                                  "image": {
+                                      "$id": "#/properties/data/items/anyOf/0/properties/attributes/properties/image",
+                                      "type": "object",
+                                      "title": "The image schema",
+                                      "description": "An explanation about the purpose of this instance.",
+                                      "default": {},
+                                      "examples": [
+                                          {
+                                              "url": null
+                                          }
+                                      ],
+                                      "required": [
+                                          "url"
+                                      ],
+                                      "additionalProperties": true,
+                                      "properties": {
+                                          "url": {
+                                              "$id": "#/properties/data/items/anyOf/0/properties/attributes/properties/image/properties/url",
+                                              "type": "null",
+                                              "title": "The url schema",
+                                              "description": "An explanation about the purpose of this instance.",
+                                              "default": null,
+                                              "examples": [
+                                                  null
+                                              ]
+                                          }
+                                      }
+                                  },
+                                  "created-at": {
+                                      "$id": "#/properties/data/items/anyOf/0/properties/attributes/properties/created-at",
+                                      "type": "string",
+                                      "title": "The created-at schema",
+                                      "description": "An explanation about the purpose of this instance.",
+                                      "default": "",
+                                      "examples": [
+                                          "2020-05-19T07:40:55.509Z"
+                                      ]
+                                  },
+                                  "updated-at": {
+                                      "$id": "#/properties/data/items/anyOf/0/properties/attributes/properties/updated-at",
+                                      "type": "string",
+                                      "title": "The updated-at schema",
+                                      "description": "An explanation about the purpose of this instance.",
+                                      "default": "",
+                                      "examples": [
+                                          "2020-05-19T07:40:55.509Z"
+                                      ]
+                                  }
+                              }
+                          },
+                          "links": {
+                              "$id": "#/properties/data/items/anyOf/0/properties/links",
+                              "type": "object",
+                              "title": "The links schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": {},
+                              "examples": [
+                                  {
+                                      "self": "/api/v1/task-comments/1"
+                                  }
+                              ],
+                              "required": [
+                                  "self"
+                              ],
+                              "additionalProperties": true,
+                              "properties": {
+                                  "self": {
+                                      "$id": "#/properties/data/items/anyOf/0/properties/links/properties/self",
+                                      "type": "string",
+                                      "title": "The self schema",
+                                      "description": "An explanation about the purpose of this instance.",
+                                      "default": "",
+                                      "examples": [
+                                          "/api/v1/task-comments/1"
+                                      ]
+                                  }
+                              }
+                          }
+                      }
+                  }
+              ],
+              "$id": "#/properties/data/items"
+          }
+      }
+  }
+}

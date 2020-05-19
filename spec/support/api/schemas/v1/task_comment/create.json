@@ -1,0 +1,212 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "data": {
+                "type": "task-comments",
+                "id": "8",
+                "attributes": {
+                    "comment": "text",
+                    "task-id": 1,
+                    "image": {
+                        "url": null
+                    },
+                    "created-at": "2020-05-19T12:11:31.690Z",
+                    "updated-at": "2020-05-19T12:11:31.690Z"
+                },
+                "links": {
+                    "self": "/api/v1/task-comments/8"
+                }
+            }
+        }
+    ],
+    "required": [
+        "data"
+    ],
+    "additionalProperties": true,
+    "properties": {
+        "data": {
+            "$id": "#/properties/data",
+            "type": "object",
+            "title": "The data schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "type": "task-comments",
+                    "id": "8",
+                    "attributes": {
+                        "comment": "text",
+                        "task-id": 1,
+                        "image": {
+                            "url": null
+                        },
+                        "created-at": "2020-05-19T12:11:31.690Z",
+                        "updated-at": "2020-05-19T12:11:31.690Z"
+                    },
+                    "links": {
+                        "self": "/api/v1/task-comments/8"
+                    }
+                }
+            ],
+            "required": [
+                "type",
+                "id",
+                "attributes",
+                "links"
+            ],
+            "additionalProperties": true,
+            "properties": {
+                "type": {
+                    "$id": "#/properties/data/properties/type",
+                    "type": "string",
+                    "title": "The type schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "task-comments"
+                    ]
+                },
+                "id": {
+                    "$id": "#/properties/data/properties/id",
+                    "type": "string",
+                    "title": "The id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "8"
+                    ]
+                },
+                "attributes": {
+                    "$id": "#/properties/data/properties/attributes",
+                    "type": "object",
+                    "title": "The attributes schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "comment": "text",
+                            "task-id": 1,
+                            "image": {
+                                "url": null
+                            },
+                            "created-at": "2020-05-19T12:11:31.690Z",
+                            "updated-at": "2020-05-19T12:11:31.690Z"
+                        }
+                    ],
+                    "required": [
+                        "comment",
+                        "task-id",
+                        "image",
+                        "created-at",
+                        "updated-at"
+                    ],
+                    "additionalProperties": true,
+                    "properties": {
+                        "comment": {
+                            "$id": "#/properties/data/properties/attributes/properties/comment",
+                            "type": "string",
+                            "title": "The comment schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "text"
+                            ]
+                        },
+                        "task-id": {
+                            "$id": "#/properties/data/properties/attributes/properties/task-id",
+                            "type": "integer",
+                            "title": "The task-id schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": 0,
+                            "examples": [
+                                1
+                            ]
+                        },
+                        "image": {
+                            "$id": "#/properties/data/properties/attributes/properties/image",
+                            "type": "object",
+                            "title": "The image schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": {},
+                            "examples": [
+                                {
+                                    "url": null
+                                }
+                            ],
+                            "required": [
+                                "url"
+                            ],
+                            "additionalProperties": true,
+                            "properties": {
+                                "url": {
+                                    "$id": "#/properties/data/properties/attributes/properties/image/properties/url",
+                                    "type": "null",
+                                    "title": "The url schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": null,
+                                    "examples": [
+                                        null
+                                    ]
+                                }
+                            }
+                        },
+                        "created-at": {
+                            "$id": "#/properties/data/properties/attributes/properties/created-at",
+                            "type": "string",
+                            "title": "The created-at schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "2020-05-19T12:11:31.690Z"
+                            ]
+                        },
+                        "updated-at": {
+                            "$id": "#/properties/data/properties/attributes/properties/updated-at",
+                            "type": "string",
+                            "title": "The updated-at schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "2020-05-19T12:11:31.690Z"
+                            ]
+                        }
+                    }
+                },
+                "links": {
+                    "$id": "#/properties/data/properties/links",
+                    "type": "object",
+                    "title": "The links schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "self": "/api/v1/task-comments/8"
+                        }
+                    ],
+                    "required": [
+                        "self"
+                    ],
+                    "additionalProperties": true,
+                    "properties": {
+                        "self": {
+                            "$id": "#/properties/data/properties/links/properties/self",
+                            "type": "string",
+                            "title": "The self schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "/api/v1/task-comments/8"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
