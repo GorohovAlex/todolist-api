@@ -4,9 +4,7 @@ class Task::Contract::Base < Reform::Form
   property :deadline
   property :state
 
-  validates :name, presence: true
-  validates :project_id, presence: true, numericality: true
-
+  validates :project_id, numericality: true
   validate :deadline_at_is_valid_datetime
 
   def deadline_at_is_valid_datetime
