@@ -92,7 +92,7 @@ RSpec.describe 'Tasks', type: :request do
       end
 
       context 'when invalid data' do
-        let(:params) { { task: { name: '' } } }
+        let(:params) { { task: { deadline: 'aaaa' } } }
 
         it do
           put api_v1_task_path(task.id, params), headers: authenticated_header(user)

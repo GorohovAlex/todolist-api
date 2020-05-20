@@ -11,7 +11,7 @@ RSpec.describe Task::Operation::Update do
   end
 
   describe 'when invalid data' do
-    let(:params) { { task: { name: '' }, id: task.id } }
+    let(:params) { { task: { deadline: 'aaa' }, id: task.id } }
 
     it { expect(result.failure?).to be true }
   end
