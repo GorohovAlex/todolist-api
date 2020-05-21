@@ -12,6 +12,6 @@ RSpec.describe Project::Operation::Delete do
   describe 'when invalid data' do
     let(:params) { { project: {} } }
 
-    it { expect(result.failure?).to be true }
+    it { expect { result }.to raise_error(ActiveRecord::RecordNotFound) }
   end
 end
