@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_05_15_203023) do
 
   create_table "task_comments", force: :cascade do |t|
     t.bigint "task_id"
-    t.string "comment"
+    t.string "comment", null: false
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2020_05_15_203023) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
-  add_foreign_key "task_comments", "tasks", on_delete: :cascade
   add_foreign_key "projects", "users", on_delete: :cascade
+  add_foreign_key "task_comments", "tasks", on_delete: :cascade
   add_foreign_key "tasks", "projects", on_delete: :cascade
 end
