@@ -23,6 +23,7 @@ gem 'trailblazer-rails', '~> 2.1', '>= 2.1.7'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
+  gem 'fasterer', '~> 0.8.0'
   gem 'ffaker'
   gem 'rswag'
 end
