@@ -10,12 +10,8 @@ class Task::Contract::Base < Reform::Form
   def deadline_at_is_valid_datetime
     return true unless deadline.present?
 
-    if (begin
-           DateTime.parse(deadline)
-        rescue StandardError
-          ArgumentError
-         end) == ArgumentError
-      errors.add(:deadline, I18n.t('errors.deadline'))
-     end
+    DateTime.parse(deadline)
+  rescue StandardError
+    errors.add(:deadline, I18n.t('errors.deadline'))
   end
 end
