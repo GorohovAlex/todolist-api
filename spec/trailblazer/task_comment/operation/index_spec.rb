@@ -11,9 +11,11 @@ RSpec.describe TaskComment::Operation::Index do
     it { expect(result.success?).to be true }
   end
 
-  describe 'when not authorized user' do
-    let(:params) { {} }
+  describe 'when other user' do
+    subject(:result) { described_class.call(params: params, current_user: user_fail) }
 
-    it { expect(result.failure?).to be true }
+    let(:user_fail) { create(:user) }
+
+    it { expect(result[:model].count).to eq 0 }
   end
 end

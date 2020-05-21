@@ -15,7 +15,7 @@ RSpec.describe 'TaskComments', type: :request do
       context 'when invalid task_id' do
         it do
           get api_v1_task_task_comments_path(task_id: 0), headers: authenticated_header(user)
-          expect(response).to have_http_status(:unprocessable_entity)
+          expect(response).to have_http_status(:not_found)
         end
       end
     end
