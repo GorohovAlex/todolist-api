@@ -7,8 +7,7 @@ RSpec.describe Task::Operation::Update do
   let(:params) { { task: attributes_for(:task), state: true, id: task.id } }
 
   describe 'when valid data' do
-    it { 
-      expect(result.success?).to be true }
+    it { expect(result.success?).to be true }
   end
 
   describe 'when invalid data' do

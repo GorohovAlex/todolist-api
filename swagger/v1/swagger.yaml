@@ -1039,11 +1039,11 @@
                   "task_comment": {
                     "type": "object",
                     "properties": {
-                      "name": {
+                      "comment": {
                         "type": "string"
                       },
                       "image": {
-                        "type": "binary"
+                        "type": "file"
                       }
                     }
                   }

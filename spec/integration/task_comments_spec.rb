@@ -38,8 +38,8 @@ RSpec.describe TaskComment do
                     task_comment: {
                       type: :object,
                       properties: {
-                        name: { type: :string },
-                        image: { type: :binary }
+                        comment: { type: :string },
+                        image: { type: :file }
                       }
                     }
                   }
