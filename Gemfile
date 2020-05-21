@@ -19,7 +19,7 @@ gem 'rack-cors'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 gem 'reform'
 gem 'reform-rails', '~> 0.2.0.rc2'
-gem 'rswag'
+gem 'rswag-ui'
 gem 'trailblazer', '~> 2.1.0.rc1'
 gem 'trailblazer-rails', '~> 2.1', '>= 2.1.7'
 
@@ -28,6 +28,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'fasterer', '~> 0.8.0'
   gem 'ffaker'
+  gem 'rswag'
 end
 
 group :development do
