@@ -373,6 +373,7 @@ DEPENDENCIES
   reform-rails (~> 0.2.0.rc2)
   rspec-rails (~> 4.0.0.beta4)
   rswag
+  rswag-api
   rswag-ui
   rubocop (~> 0.76.0)
   rubocop-performance (~> 1.5, >= 1.5.2)
