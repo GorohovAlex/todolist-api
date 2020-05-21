@@ -13,7 +13,7 @@ RSpec.describe Task do
       parameter name: 'Authorization', in: :header, type: :string, required: false
       parameter name: :project_id, in: :path, type: :integer
 
-      response '200', 'A list of Projects' do
+      response '200', 'A list of Tasks' do
         let(:Authorization) { authenticated_header(user_create)[:Authorization] }
         schema(JSON.parse(File.read('spec/support/api/v1/schemas/task/index.json')))
         run_test!
@@ -45,7 +45,7 @@ RSpec.describe Task do
                   }
                 }
 
-      response '201', 'Project info' do
+      response '201', 'Task info' do
         let(:Authorization) { authenticated_header(user_create)[:Authorization] }
         let(:task) { attributes_for(:task) }
         schema(JSON.parse(File.read('spec/support/api/v1/schemas/task/create.json')))
