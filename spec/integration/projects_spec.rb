@@ -17,8 +17,6 @@ RSpec.describe Project do
       end
 
       response '401', 'Invalid login credentials' do
-        let(:username) { user_create.username }
-        let(:password) { '' }
         run_test!
       end
     end
@@ -55,10 +53,10 @@ RSpec.describe Project do
   end
 
   path '/api/v1/projects/{id}' do
-    put 'Update the Project' do
-      let(:project_create) { create(:project, user: user_create) }
-      let(:id) { project_create.id }
+    let(:project_create) { create(:project, user: user_create) }
+    let(:id) { project_create.id }
 
+    put 'Update the Project' do
       tags 'Projects'
       produces 'application/json'
       consumes 'multipart/form-data'
@@ -88,11 +86,8 @@ RSpec.describe Project do
         run_test!
       end
     end
-    
-    delete 'Delete the Project' do
-      let(:project) { create(:project, user: user_create) }
-      let(:id) { project.id }
 
+    delete 'Delete the Project' do
       tags 'Projects'
       produces 'application/json'
       consumes 'multipart/form-data'
