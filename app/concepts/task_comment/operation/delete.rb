@@ -4,6 +4,6 @@ class TaskComment::Operation::Delete < Trailblazer::Operation
   pass :delete!
 
   def delete!(_options, model:, **)
-    TaskComment.destroy(model.id)
+    model.destroy
   end
 end
