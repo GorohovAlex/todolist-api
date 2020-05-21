@@ -676,6 +676,422 @@
         }
       }
     },
+    "/api/v1/tasks/{task_id}/task_comments": {
+      "get": {
+        "summary": "A list of TaskComments",
+        "tags": [
+          "TaskComments"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of TaskComments",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "definitions": {
+                  },
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "$id": "https://example.com/object1590073759.json",
+                  "title": "Root",
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "$id": "#root/data",
+                      "title": "Data",
+                      "type": "array",
+                      "default": [
+
+                      ],
+                      "items": {
+                        "$id": "#root/data/items",
+                        "title": "Items",
+                        "type": "object",
+                        "required": [
+                          "type",
+                          "id",
+                          "attributes",
+                          "links"
+                        ],
+                        "properties": {
+                          "type": {
+                            "$id": "#root/data/items/type",
+                            "title": "Type",
+                            "type": "string",
+                            "default": "",
+                            "examples": [
+                              "task-comments"
+                            ],
+                            "pattern": "^.*$"
+                          },
+                          "id": {
+                            "$id": "#root/data/items/id",
+                            "title": "Id",
+                            "type": "string",
+                            "default": "",
+                            "examples": [
+                              "1"
+                            ],
+                            "pattern": "^.*$"
+                          },
+                          "attributes": {
+                            "$id": "#root/data/items/attributes",
+                            "title": "Attributes",
+                            "type": "object",
+                            "required": [
+                              "comment",
+                              "task-id",
+                              "image",
+                              "created-at",
+                              "updated-at"
+                            ],
+                            "properties": {
+                              "comment": {
+                                "$id": "#root/data/items/attributes/comment",
+                                "title": "Comment",
+                                "type": "string",
+                                "default": "",
+                                "examples": [
+                                  "text"
+                                ],
+                                "pattern": "^.*$"
+                              },
+                              "task-id": {
+                                "$id": "#root/data/items/attributes/task-id",
+                                "title": "Task-id",
+                                "type": "integer",
+                                "examples": [
+                                  1
+                                ],
+                                "default": 0
+                              },
+                              "image": {
+                                "$id": "#root/data/items/attributes/image",
+                                "title": "Image",
+                                "type": "object",
+                                "required": [
+                                  "url"
+                                ],
+                                "properties": {
+                                  "url": {
+                                    "$id": "#root/data/items/attributes/image/url",
+                                    "title": "Url",
+                                    "type": "null",
+                                    "default": null
+                                  }
+                                }
+                              },
+                              "created-at": {
+                                "$id": "#root/data/items/attributes/created-at",
+                                "title": "Created-at",
+                                "type": "string",
+                                "default": "",
+                                "examples": [
+                                  "2020-05-21T15:08:21.171Z"
+                                ],
+                                "pattern": "^.*$"
+                              },
+                              "updated-at": {
+                                "$id": "#root/data/items/attributes/updated-at",
+                                "title": "Updated-at",
+                                "type": "string",
+                                "default": "",
+                                "examples": [
+                                  "2020-05-21T15:08:21.171Z"
+                                ],
+                                "pattern": "^.*$"
+                              }
+                            }
+                          },
+                          "links": {
+                            "$id": "#root/data/items/links",
+                            "title": "Links",
+                            "type": "object",
+                            "required": [
+                              "self"
+                            ],
+                            "properties": {
+                              "self": {
+                                "$id": "#root/data/items/links/self",
+                                "title": "Self",
+                                "type": "string",
+                                "default": "",
+                                "examples": [
+                                  "/api/v1/task-comments/1"
+                                ],
+                                "pattern": "^.*$"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid login credentials",
+            "content": {
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Creates a TaskComment",
+        "tags": [
+          "TaskComments"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "TaskComment info",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "definitions": {
+                  },
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "$id": "https://example.com/object1590073713.json",
+                  "title": "Root",
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "$id": "#root/data",
+                      "title": "Data",
+                      "type": "object",
+                      "required": [
+                        "type",
+                        "id",
+                        "attributes",
+                        "links"
+                      ],
+                      "properties": {
+                        "type": {
+                          "$id": "#root/data/type",
+                          "title": "Type",
+                          "type": "string",
+                          "default": "",
+                          "examples": [
+                            "task-comments"
+                          ],
+                          "pattern": "^.*$"
+                        },
+                        "id": {
+                          "$id": "#root/data/id",
+                          "title": "Id",
+                          "type": "string",
+                          "default": "",
+                          "examples": [
+                            "1"
+                          ],
+                          "pattern": "^.*$"
+                        },
+                        "attributes": {
+                          "$id": "#root/data/attributes",
+                          "title": "Attributes",
+                          "type": "object",
+                          "required": [
+                            "comment",
+                            "task-id",
+                            "image",
+                            "created-at",
+                            "updated-at"
+                          ],
+                          "properties": {
+                            "comment": {
+                              "$id": "#root/data/attributes/comment",
+                              "title": "Comment",
+                              "type": "string",
+                              "default": "",
+                              "examples": [
+                                "text"
+                              ],
+                              "pattern": "^.*$"
+                            },
+                            "task-id": {
+                              "$id": "#root/data/attributes/task-id",
+                              "title": "Task-id",
+                              "type": "integer",
+                              "examples": [
+                                1
+                              ],
+                              "default": 0
+                            },
+                            "image": {
+                              "$id": "#root/data/attributes/image",
+                              "title": "Image",
+                              "type": "object",
+                              "required": [
+                                "url"
+                              ],
+                              "properties": {
+                                "url": {
+                                  "$id": "#root/data/attributes/image/url",
+                                  "title": "Url",
+                                  "type": "null",
+                                  "default": null
+                                }
+                              }
+                            },
+                            "created-at": {
+                              "$id": "#root/data/attributes/created-at",
+                              "title": "Created-at",
+                              "type": "string",
+                              "default": "",
+                              "examples": [
+                                "2020-05-21T15:08:21.171Z"
+                              ],
+                              "pattern": "^.*$"
+                            },
+                            "updated-at": {
+                              "$id": "#root/data/attributes/updated-at",
+                              "title": "Updated-at",
+                              "type": "string",
+                              "default": "",
+                              "examples": [
+                                "2020-05-21T15:08:21.171Z"
+                              ],
+                              "pattern": "^.*$"
+                            }
+                          }
+                        },
+                        "links": {
+                          "$id": "#root/data/links",
+                          "title": "Links",
+                          "type": "object",
+                          "required": [
+                            "self"
+                          ],
+                          "properties": {
+                            "self": {
+                              "$id": "#root/data/links/self",
+                              "title": "Self",
+                              "type": "string",
+                              "default": "",
+                              "examples": [
+                                "/api/v1/task-comments/1"
+                              ],
+                              "pattern": "^.*$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid login credentials",
+            "content": {
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "task_comment": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "binary"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/task_comments/{id}": {
+      "delete": {
+        "summary": "Delete the Task",
+        "tags": [
+          "TaskComments"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Task deleted",
+            "content": {
+            }
+          },
+          "401": {
+            "description": "Not authorized",
+            "content": {
+            }
+          }
+        }
+      }
+    },
     "/api/v1/projects/{project_id}/tasks": {
       "get": {
         "summary": "A list of Tasks",
@@ -702,7 +1118,7 @@
         ],
         "responses": {
           "200": {
-            "description": "A list of Projects",
+            "description": "A list of Tasks",
             "content": {
               "application/json": {
                 "schema": {
@@ -883,7 +1299,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Project info",
+            "description": "Task info",
             "content": {
               "application/json": {
                 "schema": {
