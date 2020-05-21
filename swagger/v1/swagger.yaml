@@ -30,7 +30,163 @@
                   "definitions": {
                   },
                   "$schema": "http://json-schema.org/draft-07/schema#",
-                  "$id": "https://example.com/object1590049706.json",
+                  "$id": "https://example.com/object1590050139.json",
+                  "title": "Root",
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "$id": "#root/data",
+                      "title": "Data",
+                      "type": "array",
+                      "default": [
+
+                      ],
+                      "items": {
+                        "$id": "#root/data/items",
+                        "title": "Items",
+                        "type": "object",
+                        "required": [
+                          "type",
+                          "id",
+                          "attributes",
+                          "links"
+                        ],
+                        "properties": {
+                          "type": {
+                            "$id": "#root/data/items/type",
+                            "title": "Type",
+                            "type": "string",
+                            "default": "",
+                            "examples": [
+                              "projects"
+                            ],
+                            "pattern": "^.*$"
+                          },
+                          "id": {
+                            "$id": "#root/data/items/id",
+                            "title": "Id",
+                            "type": "string",
+                            "default": "",
+                            "examples": [
+                              "4"
+                            ],
+                            "pattern": "^.*$"
+                          },
+                          "attributes": {
+                            "$id": "#root/data/items/attributes",
+                            "title": "Attributes",
+                            "type": "object",
+                            "required": [
+                              "name",
+                              "user-id",
+                              "created-at",
+                              "updated-at"
+                            ],
+                            "properties": {
+                              "name": {
+                                "$id": "#root/data/items/attributes/name",
+                                "title": "Name",
+                                "type": "string",
+                                "default": "",
+                                "examples": [
+                                  "project4"
+                                ],
+                                "pattern": "^.*$"
+                              },
+                              "user-id": {
+                                "$id": "#root/data/items/attributes/user-id",
+                                "title": "User-id",
+                                "type": "integer",
+                                "examples": [
+                                  2
+                                ],
+                                "default": 0
+                              },
+                              "created-at": {
+                                "$id": "#root/data/items/attributes/created-at",
+                                "title": "Created-at",
+                                "type": "string",
+                                "default": "",
+                                "examples": [
+                                  "2020-05-21T08:23:34.047Z"
+                                ],
+                                "pattern": "^.*$"
+                              },
+                              "updated-at": {
+                                "$id": "#root/data/items/attributes/updated-at",
+                                "title": "Updated-at",
+                                "type": "string",
+                                "default": "",
+                                "examples": [
+                                  "2020-05-21T08:23:34.047Z"
+                                ],
+                                "pattern": "^.*$"
+                              }
+                            }
+                          },
+                          "links": {
+                            "$id": "#root/data/items/links",
+                            "title": "Links",
+                            "type": "object",
+                            "required": [
+                              "self"
+                            ],
+                            "properties": {
+                              "self": {
+                                "$id": "#root/data/items/links/self",
+                                "title": "Self",
+                                "type": "string",
+                                "default": "",
+                                "examples": [
+                                  "/api/v1/projects/4"
+                                ],
+                                "pattern": "^.*$"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid login credentials",
+            "content": {
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Creates a Project",
+        "tags": [
+          "Projects"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Project info",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "definitions": {
+                  },
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "$id": "https://example.com/object1590067403.json",
                   "title": "Root",
                   "type": "object",
                   "required": [
@@ -64,7 +220,7 @@
                           "type": "string",
                           "default": "",
                           "examples": [
-                            "6"
+                            "1"
                           ],
                           "pattern": "^.*$"
                         },
@@ -94,7 +250,7 @@
                               "title": "User-id",
                               "type": "integer",
                               "examples": [
-                                2
+                                1
                               ],
                               "default": 0
                             },
@@ -104,7 +260,7 @@
                               "type": "string",
                               "default": "",
                               "examples": [
-                                "2020-05-21T08:28:17.510Z"
+                                "2020-05-21T13:23:03.498Z"
                               ],
                               "pattern": "^.*$"
                             },
@@ -114,7 +270,7 @@
                               "type": "string",
                               "default": "",
                               "examples": [
-                                "2020-05-21T08:28:17.510Z"
+                                "2020-05-21T13:23:03.498Z"
                               ],
                               "pattern": "^.*$"
                             }
@@ -134,7 +290,7 @@
                               "type": "string",
                               "default": "",
                               "examples": [
-                                "/api/v1/projects/6"
+                                "/api/v1/projects/1"
                               ],
                               "pattern": "^.*$"
                             }
@@ -149,6 +305,238 @@
           },
           "401": {
             "description": "Invalid login credentials",
+            "content": {
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "project": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/projects/{id}": {
+      "put": {
+        "summary": "Update the Project",
+        "tags": [
+          "Projects"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Project updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "definitions": {
+                  },
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "$id": "https://example.com/object1590067403.json",
+                  "title": "Root",
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "$id": "#root/data",
+                      "title": "Data",
+                      "type": "object",
+                      "required": [
+                        "type",
+                        "id",
+                        "attributes",
+                        "links"
+                      ],
+                      "properties": {
+                        "type": {
+                          "$id": "#root/data/type",
+                          "title": "Type",
+                          "type": "string",
+                          "default": "",
+                          "examples": [
+                            "projects"
+                          ],
+                          "pattern": "^.*$"
+                        },
+                        "id": {
+                          "$id": "#root/data/id",
+                          "title": "Id",
+                          "type": "string",
+                          "default": "",
+                          "examples": [
+                            "1"
+                          ],
+                          "pattern": "^.*$"
+                        },
+                        "attributes": {
+                          "$id": "#root/data/attributes",
+                          "title": "Attributes",
+                          "type": "object",
+                          "required": [
+                            "name",
+                            "user-id",
+                            "created-at",
+                            "updated-at"
+                          ],
+                          "properties": {
+                            "name": {
+                              "$id": "#root/data/attributes/name",
+                              "title": "Name",
+                              "type": "string",
+                              "default": "",
+                              "examples": [
+                                "project4"
+                              ],
+                              "pattern": "^.*$"
+                            },
+                            "user-id": {
+                              "$id": "#root/data/attributes/user-id",
+                              "title": "User-id",
+                              "type": "integer",
+                              "examples": [
+                                1
+                              ],
+                              "default": 0
+                            },
+                            "created-at": {
+                              "$id": "#root/data/attributes/created-at",
+                              "title": "Created-at",
+                              "type": "string",
+                              "default": "",
+                              "examples": [
+                                "2020-05-21T13:23:03.498Z"
+                              ],
+                              "pattern": "^.*$"
+                            },
+                            "updated-at": {
+                              "$id": "#root/data/attributes/updated-at",
+                              "title": "Updated-at",
+                              "type": "string",
+                              "default": "",
+                              "examples": [
+                                "2020-05-21T13:23:03.498Z"
+                              ],
+                              "pattern": "^.*$"
+                            }
+                          }
+                        },
+                        "links": {
+                          "$id": "#root/data/links",
+                          "title": "Links",
+                          "type": "object",
+                          "required": [
+                            "self"
+                          ],
+                          "properties": {
+                            "self": {
+                              "$id": "#root/data/links/self",
+                              "title": "Self",
+                              "type": "string",
+                              "default": "",
+                              "examples": [
+                                "/api/v1/projects/1"
+                              ],
+                              "pattern": "^.*$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not authorized",
+            "content": {
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "project": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete the Project",
+        "tags": [
+          "Projects"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Project deleted",
+            "content": {
+            }
+          },
+          "401": {
+            "description": "Not authorized",
             "content": {
             }
           }

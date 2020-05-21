@@ -22,23 +22,91 @@ RSpec.describe Project do
         run_test!
       end
     end
+
+    post 'Creates a Project' do
+      tags 'Projects'
+      produces 'application/json'
+      consumes 'multipart/form-data'
+      parameter name: 'Authorization', in: :header, type: :string, required: false
+      parameter name: :project, in: :formData, required: false,
+                schema: {
+                  type: :object,
+                  properties: {
+                    project: {
+                      type: :object,
+                      properties: {
+                        name: { type: :string }
+                      }
+                    }
+                  }
+                }
+
+      response '201', 'Project info' do
+        let(:Authorization) { authenticated_header(user_create)[:Authorization] }
+        let(:project) { attributes_for(:project) }
+        schema(JSON.parse(File.read('spec/support/api/v1/schemas/project/create.json')))
+        run_test!
+      end
+
+      response '401', 'Invalid login credentials' do
+        run_test!
+      end
+    end
   end
 
-  # path '/api/v1/auth/sign_out' do
-  #   delete 'Sign Out' do
-  #     tags 'Authentication'
-  #     produces 'application/json'
-  #     consumes 'multipart/form-data'
-  #     parameter name: 'Authorization', in: :header, type: :string, required: false
+  path '/api/v1/projects/{id}' do
+    put 'Update the Project' do
+      let(:project_create) { create(:project, user: user_create) }
+      let(:id) { project_create.id }
 
-  #     response '204', ' User sign out' do
-  #       let(:Authorization) { authenticated_header(user_create)[:Authorization] }
-  #       run_test!
-  #     end
+      tags 'Projects'
+      produces 'application/json'
+      consumes 'multipart/form-data'
+      parameter name: :id, in: :path, type: :integer
+      parameter name: 'Authorization', in: :header, type: :string, required: false
+      parameter name: :project, in: :formData, required: false,
+                schema: {
+                  type: :object,
+                  properties: {
+                    project: {
+                      type: :object,
+                      properties: {
+                        name: { type: :string }
+                      }
+                    }
+                  }
+                }
 
-  #     response '401', 'Not authorized' do
-  #       run_test!
-  #     end
-  #   end
-  # end
+      response '200', 'Project updated' do
+        let(:Authorization) { authenticated_header(user_create)[:Authorization] }
+        let(:project) { attributes_for(:project) }
+        schema(JSON.parse(File.read('spec/support/api/v1/schemas/project/create.json')))
+        run_test!
+      end
+
+      response '401', 'Not authorized' do
+        run_test!
+      end
+    end
+    
+    delete 'Delete the Project' do
+      let(:project) { create(:project, user: user_create) }
+      let(:id) { project.id }
+
+      tags 'Projects'
+      produces 'application/json'
+      consumes 'multipart/form-data'
+      parameter name: :id, in: :path, type: :integer
+      parameter name: 'Authorization', in: :header, type: :string, required: false
+
+      response '204', 'Project deleted' do
+        let(:Authorization) { authenticated_header(user_create)[:Authorization] }
+        run_test!
+      end
+
+      response '401', 'Not authorized' do
+        run_test!
+      end
+    end
+  end
 end
