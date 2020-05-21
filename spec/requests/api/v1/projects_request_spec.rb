@@ -1,13 +1,9 @@
 RSpec.describe 'Projects', type: :request do
-  include Docs::V1::Projects::Api
-
   let(:user) { create(:user) }
   let(:project) { create(:project, user: user) }
 
   describe 'when GET /projects' do
-    include Docs::V1::Projects::Index
-
-    context 'when authorized user', :dox do
+    context 'when authorized user' do
       it do
         get api_v1_projects_path, params: nil, headers: authenticated_header(user)
         expect(response).to have_http_status(:ok)

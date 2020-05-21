@@ -4,7 +4,7 @@ RSpec.describe 'Tasks', type: :request do
   let(:task) { create(:task, project: project) }
 
   describe 'when GET /projects/{:project_id}/tasks' do
-    context 'when authorized user', :dox do
+    context 'when authorized user' do
       it do
         get api_v1_project_tasks_path(project_id: project.id), headers: authenticated_header(user)
         expect(response).to have_http_status(:ok)
@@ -58,7 +58,7 @@ RSpec.describe 'Tasks', type: :request do
   end
 
   describe 'when GET /tasks/:id' do
-    context 'when authorized user', :dox do
+    context 'when authorized user' do
       it 'send valid id' do
         get api_v1_task_path(task.id), headers: authenticated_header(user)
         expect(response).to have_http_status(:ok)

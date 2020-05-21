@@ -40,7 +40,6 @@ group :development do
 end
 
 group :test do
-  gem 'dox', require: false
   gem 'json_matchers'
   gem 'rspec-rails', '~> 4.0.0.beta4'
   gem 'shoulda-matchers'
