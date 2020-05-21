@@ -14,7 +14,7 @@ RSpec.describe 'Tasks', type: :request do
       context 'when invalid project_id' do
         it do
           get api_v1_project_tasks_path(project_id: 0), headers: authenticated_header(user)
-          expect(response).to have_http_status(:unprocessable_entity)
+          expect(response).to have_http_status(:not_found)
         end
       end
     end

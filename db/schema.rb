@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_14_205630) do
+ActiveRecord::Schema.define(version: 2020_05_14_204603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "projects", force: :cascade do |t|
-    t.string "name"
-    t.bigint "user_id"
+    t.string "name", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_projects_on_user_id"
@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 2020_05_14_205630) do
     t.bigint "project_id"
     t.boolean "state", default: false
     t.datetime "deadline"
+    t.integer "position"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "position"
     t.index ["project_id"], name: "index_tasks_on_project_id"
   end
 
@@ -42,6 +42,6 @@ ActiveRecord::Schema.define(version: 2020_05_14_205630) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
-  add_foreign_key "tasks", "projects", on_delete: :cascade
   add_foreign_key "projects", "users", on_delete: :cascade
+  add_foreign_key "tasks", "projects", on_delete: :cascade
 end
