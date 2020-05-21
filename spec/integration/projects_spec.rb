@@ -23,22 +23,4 @@ RSpec.describe Project do
       end
     end
   end
-
-  # path '/api/v1/auth/sign_out' do
-  #   delete 'Sign Out' do
-  #     tags 'Authentication'
-  #     produces 'application/json'
-  #     consumes 'multipart/form-data'
-  #     parameter name: 'Authorization', in: :header, type: :string, required: false
-
-  #     response '204', ' User sign out' do
-  #       let(:Authorization) { authenticated_header(user_create)[:Authorization] }
-  #       run_test!
-  #     end
-
-  #     response '401', 'Not authorized' do
-  #       run_test!
-  #     end
-  #   end
-  # end
 end
