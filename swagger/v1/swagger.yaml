@@ -1,0 +1,460 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API V1",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/v1/projects": {
+      "get": {
+        "summary": "A list of Projects",
+        "tags": [
+          "Projects"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of Projects",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "definitions": {
+                  },
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "$id": "https://example.com/object1590049706.json",
+                  "title": "Root",
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "$id": "#root/data",
+                      "title": "Data",
+                      "type": "object",
+                      "required": [
+                        "type",
+                        "id",
+                        "attributes",
+                        "links"
+                      ],
+                      "properties": {
+                        "type": {
+                          "$id": "#root/data/type",
+                          "title": "Type",
+                          "type": "string",
+                          "default": "",
+                          "examples": [
+                            "projects"
+                          ],
+                          "pattern": "^.*$"
+                        },
+                        "id": {
+                          "$id": "#root/data/id",
+                          "title": "Id",
+                          "type": "string",
+                          "default": "",
+                          "examples": [
+                            "6"
+                          ],
+                          "pattern": "^.*$"
+                        },
+                        "attributes": {
+                          "$id": "#root/data/attributes",
+                          "title": "Attributes",
+                          "type": "object",
+                          "required": [
+                            "name",
+                            "user-id",
+                            "created-at",
+                            "updated-at"
+                          ],
+                          "properties": {
+                            "name": {
+                              "$id": "#root/data/attributes/name",
+                              "title": "Name",
+                              "type": "string",
+                              "default": "",
+                              "examples": [
+                                "project4"
+                              ],
+                              "pattern": "^.*$"
+                            },
+                            "user-id": {
+                              "$id": "#root/data/attributes/user-id",
+                              "title": "User-id",
+                              "type": "integer",
+                              "examples": [
+                                2
+                              ],
+                              "default": 0
+                            },
+                            "created-at": {
+                              "$id": "#root/data/attributes/created-at",
+                              "title": "Created-at",
+                              "type": "string",
+                              "default": "",
+                              "examples": [
+                                "2020-05-21T08:28:17.510Z"
+                              ],
+                              "pattern": "^.*$"
+                            },
+                            "updated-at": {
+                              "$id": "#root/data/attributes/updated-at",
+                              "title": "Updated-at",
+                              "type": "string",
+                              "default": "",
+                              "examples": [
+                                "2020-05-21T08:28:17.510Z"
+                              ],
+                              "pattern": "^.*$"
+                            }
+                          }
+                        },
+                        "links": {
+                          "$id": "#root/data/links",
+                          "title": "Links",
+                          "type": "object",
+                          "required": [
+                            "self"
+                          ],
+                          "properties": {
+                            "self": {
+                              "$id": "#root/data/links/self",
+                              "title": "Self",
+                              "type": "string",
+                              "default": "",
+                              "examples": [
+                                "/api/v1/projects/6"
+                              ],
+                              "pattern": "^.*$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid login credentials",
+            "content": {
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/sign_in": {
+      "post": {
+        "summary": "Sign In",
+        "tags": [
+          "Authentication"
+        ],
+        "parameters": [
+
+        ],
+        "responses": {
+          "200": {
+            "description": "User information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-07/schema",
+                  "$id": "http://example.com/example.json",
+                  "type": "object",
+                  "title": "The root schema",
+                  "description": "The root schema comprises the entire JSON document.",
+                  "default": {
+                  },
+                  "examples": [
+                    {
+                      "csrf": "BFBvVSq3HEfBJx6xqtf2+52I/qBaX3GMQ1rhUNsem+SYCQIpHUwwWg9Rn53dRR2IKF5xsrdxq8ZUNltoNji9ww==",
+                      "access": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODk1NTY3ODcsInVzZXJfaWQiOjEsInVpZCI6IjI1NjY4MjYwLWVlYjEtNDU4NC1iZmRjLTlhMDVjY2M0Zjg4MiIsInJ1aWQiOiI5M2U3NzdjNy1kOTk0LTRkNmUtODVmYy05YTM3NGNmM2ZlNjAifQ.t71_XqLar62-l5pZtH1JJguGBLqyebw-TexePiKv3CY",
+                      "access_expires_at": "2020-05-15T18:33:07.000+03:00",
+                      "refresh": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1OTAxNTc5ODcsInVpZCI6IjkzZTc3N2M3LWQ5OTQtNGQ2ZS04NWZjLTlhMzc0Y2YzZmU2MCJ9.sd-VG1aCBMOhGOxa7j72_qMNJLBDhPFPDtoRhsnxPUo",
+                      "refresh_expires_at": "2020-05-22T17:33:07.000+03:00"
+                    }
+                  ],
+                  "required": [
+                    "csrf",
+                    "access",
+                    "access_expires_at",
+                    "refresh",
+                    "refresh_expires_at"
+                  ],
+                  "additionalProperties": true,
+                  "properties": {
+                    "csrf": {
+                      "$id": "#/properties/csrf",
+                      "type": "string",
+                      "title": "The csrf schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                        "BFBvVSq3HEfBJx6xqtf2+52I/qBaX3GMQ1rhUNsem+SYCQIpHUwwWg9Rn53dRR2IKF5xsrdxq8ZUNltoNji9ww=="
+                      ]
+                    },
+                    "access": {
+                      "$id": "#/properties/access",
+                      "type": "string",
+                      "title": "The access schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                        "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODk1NTY3ODcsInVzZXJfaWQiOjEsInVpZCI6IjI1NjY4MjYwLWVlYjEtNDU4NC1iZmRjLTlhMDVjY2M0Zjg4MiIsInJ1aWQiOiI5M2U3NzdjNy1kOTk0LTRkNmUtODVmYy05YTM3NGNmM2ZlNjAifQ.t71_XqLar62-l5pZtH1JJguGBLqyebw-TexePiKv3CY"
+                      ]
+                    },
+                    "access_expires_at": {
+                      "$id": "#/properties/access_expires_at",
+                      "type": "string",
+                      "title": "The access_expires_at schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                        "2020-05-15T18:33:07.000+03:00"
+                      ]
+                    },
+                    "refresh": {
+                      "$id": "#/properties/refresh",
+                      "type": "string",
+                      "title": "The refresh schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                        "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1OTAxNTc5ODcsInVpZCI6IjkzZTc3N2M3LWQ5OTQtNGQ2ZS04NWZjLTlhMzc0Y2YzZmU2MCJ9.sd-VG1aCBMOhGOxa7j72_qMNJLBDhPFPDtoRhsnxPUo"
+                      ]
+                    },
+                    "refresh_expires_at": {
+                      "$id": "#/properties/refresh_expires_at",
+                      "type": "string",
+                      "title": "The refresh_expires_at schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                        "2020-05-22T17:33:07.000+03:00"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid login credentials",
+            "content": {
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/sign_out": {
+      "delete": {
+        "summary": "Sign Out",
+        "tags": [
+          "Authentication"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": " User sign out",
+            "content": {
+            }
+          },
+          "401": {
+            "description": "Not authorized",
+            "content": {
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth": {
+      "post": {
+        "summary": "Registration",
+        "tags": [
+          "Authentication"
+        ],
+        "parameters": [
+
+        ],
+        "responses": {
+          "201": {
+            "description": "created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "definitions": {
+                  },
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "$id": "https://example.com/object1589968328.json",
+                  "title": "Root",
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "$id": "#root/data",
+                      "title": "Data",
+                      "type": "object",
+                      "required": [
+                        "type",
+                        "id",
+                        "attributes",
+                        "links"
+                      ],
+                      "properties": {
+                        "type": {
+                          "$id": "#root/data/type",
+                          "title": "Type",
+                          "type": "string",
+                          "default": "",
+                          "examples": [
+                            "users"
+                          ],
+                          "pattern": "^.*$"
+                        },
+                        "id": {
+                          "$id": "#root/data/id",
+                          "title": "Id",
+                          "type": "string",
+                          "default": "",
+                          "examples": [
+                            "5"
+                          ],
+                          "pattern": "^.*$"
+                        },
+                        "attributes": {
+                          "$id": "#root/data/attributes",
+                          "title": "Attributes",
+                          "type": "object",
+                          "required": [
+                            "username",
+                            "created-at",
+                            "updated-at"
+                          ],
+                          "properties": {
+                            "username": {
+                              "$id": "#root/data/attributes/username",
+                              "title": "Username",
+                              "type": "string",
+                              "default": "",
+                              "examples": [
+                                "string5"
+                              ],
+                              "pattern": "^.*$"
+                            },
+                            "created-at": {
+                              "$id": "#root/data/attributes/created-at",
+                              "title": "Created-at",
+                              "type": "string",
+                              "default": "",
+                              "examples": [
+                                "2020-05-20T09:51:58.876Z"
+                              ],
+                              "pattern": "^.*$"
+                            },
+                            "updated-at": {
+                              "$id": "#root/data/attributes/updated-at",
+                              "title": "Updated-at",
+                              "type": "string",
+                              "default": "",
+                              "examples": [
+                                "2020-05-20T09:51:58.876Z"
+                              ],
+                              "pattern": "^.*$"
+                            }
+                          }
+                        },
+                        "links": {
+                          "$id": "#root/data/links",
+                          "title": "Links",
+                          "type": "object",
+                          "required": [
+                            "self"
+                          ],
+                          "properties": {
+                            "self": {
+                              "$id": "#root/data/links/self",
+                              "title": "Self",
+                              "type": "string",
+                              "default": "",
+                              "examples": [
+                                "/api/v1/users/5"
+                              ],
+                              "pattern": "^.*$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid request",
+            "content": {
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "user": {
+                    "type": "object",
+                    "properties": {
+                      "username": {
+                        "type": "string"
+                      },
+                      "password": {
+                        "type": "string"
+                      },
+                      "password_confirmation": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "variables": {
+        "defaultHost": {
+          "default": "localhost:3000/api/v1/"
+        }
+      }
+    }
+  ]
+}

@@ -1,2 +1,2 @@
 require 'json_matchers/rspec'
-JsonMatchers.schema_root = 'spec/support/api/schemas/v1'
+JsonMatchers.schema_root = 'spec/support/api/v1/schemas'

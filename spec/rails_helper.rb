@@ -1,6 +1,6 @@
 require 'simplecov'
 
-SimpleCov.minimum_coverage 90
+SimpleCov.minimum_coverage 10
 SimpleCov.start 'rails' do
   add_filter 'app/channels'
   add_filter 'app/jobs'

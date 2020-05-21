@@ -28,6 +28,14 @@ Metrics/LineLength:
 Style/Documentation:
   Enabled: false
 
+Lint/UnreachableCode:
+  Exclude:
+    - 'app/concepts/**/*'
+
+Style/SignalException:
+  Exclude:
+    - 'app/concepts/**/*'
+
 Style/ClassAndModuleChildren:
   Enabled: false
 
@@ -40,6 +48,9 @@ RSpec/DescribeClass:
     - spec/views/**/*
 
 RSpec/MessageChain:
+  Enabled: false
+
+RSpec/EmptyExampleGroup:
   Enabled: false
 
 RSpec/LetSetup:

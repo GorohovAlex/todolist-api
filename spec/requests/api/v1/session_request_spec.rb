@@ -13,7 +13,7 @@ RSpec.describe 'Session', type: :request do
         end
       end
 
-      context 'when invalid user_name', :dox do
+      context 'when invalid user_name' do
         let(:params) { { username: '', password: '' } }
 
         it do
@@ -22,7 +22,7 @@ RSpec.describe 'Session', type: :request do
         end
       end
 
-      context 'when invalid password', :dox do
+      context 'when invalid password' do
         let(:params) { { username: user_params[:username], password: '' } }
 
         it do

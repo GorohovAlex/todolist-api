@@ -25,7 +25,9 @@ gem 'trailblazer-rails', '~> 2.1', '>= 2.1.7'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
+  gem 'fasterer', '~> 0.8.0'
   gem 'ffaker'
+  gem 'rswag'
 end
 
 group :development do
@@ -39,7 +41,6 @@ group :development do
 end
 
 group :test do
-  gem 'dox', require: false
   gem 'json_matchers'
   gem 'rspec-rails', '~> 4.0.0.beta4'
   gem 'shoulda-matchers'

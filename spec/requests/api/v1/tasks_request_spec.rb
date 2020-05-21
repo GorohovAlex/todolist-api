@@ -4,7 +4,7 @@ RSpec.describe 'Tasks', type: :request do
   let(:task) { create(:task, project: project) }
 
   describe 'when GET /projects/{:project_id}/tasks' do
-    context 'when authorized user', :dox do
+    context 'when authorized user' do
       it do
         get api_v1_project_tasks_path(project_id: project.id), headers: authenticated_header(user)
         expect(response).to have_http_status(:ok)
@@ -14,7 +14,7 @@ RSpec.describe 'Tasks', type: :request do
       context 'when invalid project_id' do
         it do
           get api_v1_project_tasks_path(project_id: 0), headers: authenticated_header(user)
-          expect(response).to have_http_status(:unprocessable_entity)
+          expect(response).to have_http_status(:not_found)
         end
       end
     end
@@ -58,7 +58,7 @@ RSpec.describe 'Tasks', type: :request do
   end
 
   describe 'when GET /tasks/:id' do
-    context 'when authorized user', :dox do
+    context 'when authorized user' do
       it 'send valid id' do
         get api_v1_task_path(task.id), headers: authenticated_header(user)
         expect(response).to have_http_status(:ok)
@@ -92,7 +92,7 @@ RSpec.describe 'Tasks', type: :request do
       end
 
       context 'when invalid data' do
-        let(:params) { { task: { name: '' } } }
+        let(:params) { { task: { deadline: 'aaaa' } } }
 
         it do
           put api_v1_task_path(task.id, params), headers: authenticated_header(user)

@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2020_05_15_203023) do
   enable_extension "plpgsql"
 
   create_table "projects", force: :cascade do |t|
-    t.string "name"
-    t.bigint "user_id"
+    t.string "name", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_projects_on_user_id"
@@ -37,9 +37,9 @@ ActiveRecord::Schema.define(version: 2020_05_15_203023) do
     t.bigint "project_id"
     t.boolean "state", default: false
     t.datetime "deadline"
+    t.integer "position"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "position"
     t.index ["project_id"], name: "index_tasks_on_project_id"
   end
 
@@ -52,5 +52,6 @@ ActiveRecord::Schema.define(version: 2020_05_15_203023) do
   end
 
   add_foreign_key "task_comments", "tasks", on_delete: :cascade
+  add_foreign_key "projects", "users", on_delete: :cascade
   add_foreign_key "tasks", "projects", on_delete: :cascade
 end
