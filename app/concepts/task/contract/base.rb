@@ -6,7 +6,7 @@ class Task::Contract::Base < Reform::Form
   property :position
 
   validates :project_id, numericality: true
-  validates :position, numericality: true, if: :position_present?
+  validates :position, numericality: true, allow_nil: true
   validate :deadline_at_is_valid_datetime
 
   def deadline_at_is_valid_datetime
@@ -15,9 +15,5 @@ class Task::Contract::Base < Reform::Form
     DateTime.parse(deadline)
   rescue StandardError
     errors.add(:deadline, I18n.t('errors.deadline'))
-  end
-
-  def position_present?
-    position.present?
   end
 end
