@@ -1,4 +1,5 @@
 class Task::Operation::Index < Trailblazer::Operation
+  step Policy::Pundit(TaskPolicy, :index?)
   pass :project!
   step :project_policy!
   pass :model!
@@ -11,7 +12,7 @@ class Task::Operation::Index < Trailblazer::Operation
     ProjectPolicy.new(current_user, project).show?
   end
 
-  def model!(options, project:, **)
-    options[:model] = project.tasks
+  def model!(options, project:, current_user:, **)
+    options[:model] = Pundit.policy_scope(current_user, project.tasks)
   end
 end
