@@ -16,6 +16,6 @@ RSpec.describe Task::Operation::Index do
 
     let(:user_fail) { create(:user) }
 
-    it { expect(result[:model].count).to eq 0 }
+    it { expect(result.failure?).to be true }
   end
 end
