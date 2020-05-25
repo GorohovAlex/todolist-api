@@ -6,6 +6,7 @@ ruby '2.6.3'
 gem 'acts_as_list', '~> 1.0', '>= 1.0.1'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'carrierwave', '~> 2.0'
 gem 'dry-monads', '~> 1.3', '>= 1.3.5'
 gem 'dry-validation'
 gem 'jsonapi-serializers'
