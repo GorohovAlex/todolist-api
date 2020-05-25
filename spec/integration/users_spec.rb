@@ -8,18 +8,18 @@ RSpec.describe User do
       produces 'application/json'
       parameter name: :user, in: :body,
                 schema: {
-                type: :object,
-                properties: {
-                  user: {
-                    type: :object,
-                    properties: {
-                      username: { type: :string },
-                      password: { type: :string },
-                      password_confirmation: { type: :string }
+                  type: :object,
+                  properties: {
+                    user: {
+                      type: :object,
+                      properties: {
+                        username: { type: :string },
+                        password: { type: :string },
+                        password_confirmation: { type: :string }
+                      }
                     }
                   }
                 }
-              }
 
       response '201', :created do
         let(:user) { { user: attributes_for(:user) } }
