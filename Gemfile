@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+gem 'acts_as_list', '~> 1.0', '>= 1.0.1'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'dry-monads', '~> 1.3', '>= 1.3.5'
@@ -39,7 +40,6 @@ group :development do
 end
 
 group :test do
-  gem 'dox', require: false
   gem 'json_matchers'
   gem 'rspec-rails', '~> 4.0.0.beta4'
   gem 'shoulda-matchers'

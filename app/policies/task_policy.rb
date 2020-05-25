@@ -1,4 +1,4 @@
-class ProjectPolicy < ApplicationPolicy
+class TaskPolicy < ApplicationPolicy
   def index?
     true if user.present?
   end
@@ -8,14 +8,14 @@ class ProjectPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user.eql?(user)
-  end
-
-  def show?
-    record.user.eql?(user)
+    record.project.user.eql?(user)
   end
 
   def destroy?
+    update?
+  end
+
+  def show?
     update?
   end
 
@@ -23,7 +23,7 @@ class ProjectPolicy < ApplicationPolicy
     attr_reader :user, :scope
 
     def resolve
-      scope.where(user: user)
+      scope.joins(:project).where('projects.user_id=?', user.id)
     end
   end
 end

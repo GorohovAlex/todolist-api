@@ -6,7 +6,10 @@ Rails.application.routes.draw do
       post   'auth',          to: 'users#create'
       post   'auth/sign_in',  to: 'session#create'
       delete 'auth/sign_out', to: 'session#destroy'
-      resources :projects, only: %i[index create update destroy]
+      resources :projects, only: %i[index create update destroy] do
+        resources :tasks, only: %i[index create]
+      end
+      resources :tasks, only: %i[show update destroy]
     end
   end
 end
