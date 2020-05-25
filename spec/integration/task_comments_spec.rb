@@ -9,8 +9,8 @@ RSpec.describe TaskComment do
   path '/api/v1/tasks/{task_id}/task_comments' do
     get 'A list of TaskComments' do
       tags 'TaskComments'
+      consumes 'application/json'
       produces 'application/json'
-      consumes 'multipart/form-data'
       parameter name: 'Authorization', in: :header, type: :string, required: false
       parameter name: :task_id, in: :path, type: :integer
 
@@ -27,11 +27,11 @@ RSpec.describe TaskComment do
 
     post 'Creates a TaskComment' do
       tags 'TaskComments'
+      consumes 'application/json'
       produces 'application/json'
-      consumes 'multipart/form-data'
       parameter name: 'Authorization', in: :header, type: :string, required: false
       parameter name: :task_id, in: :path, type: :integer
-      parameter name: :task_comment, in: :formData, required: false,
+      parameter name: :task_comment, in: :body, required: false,
                 schema: {
                   type: :object,
                   properties: {
@@ -47,7 +47,7 @@ RSpec.describe TaskComment do
 
       response '201', 'TaskComment info' do
         let(:Authorization) { authenticated_header(user_create)[:Authorization] }
-        let(:task_comment) { attributes_for(:task_comment) }
+        let(:task_comment) { { task_comment: attributes_for(:task_comment) } }
         schema(JSON.parse(File.read('spec/support/api/v1/schemas/task_comment/create.json')))
         run_test!
       end
@@ -65,7 +65,7 @@ RSpec.describe TaskComment do
     delete 'Delete the Task' do
       tags 'TaskComments'
       produces 'application/json'
-      consumes 'multipart/form-data'
+      produces 'application/json'
       parameter name: :id, in: :path, type: :integer
       parameter name: 'Authorization', in: :header, type: :string, required: false
 

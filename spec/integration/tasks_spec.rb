@@ -8,8 +8,8 @@ RSpec.describe Task do
   path '/api/v1/projects/{project_id}/tasks' do
     get 'A list of Tasks' do
       tags 'Tasks'
+      consumes 'application/json'
       produces 'application/json'
-      consumes 'multipart/form-data'
       parameter name: 'Authorization', in: :header, type: :string, required: false
       parameter name: :project_id, in: :path, type: :integer
 
@@ -26,15 +26,15 @@ RSpec.describe Task do
 
     post 'Creates a Task' do
       tags 'Tasks'
+      consumes 'application/json'
       produces 'application/json'
-      consumes 'multipart/form-data'
       parameter name: 'Authorization', in: :header, type: :string, required: false
       parameter name: :project_id, in: :path, type: :integer
-      parameter name: :task, in: :formData, required: false,
+      parameter name: :task, in: :body, required: false,
                 schema: {
                   type: :object,
                   properties: {
-                    project: {
+                    task: {
                       type: :object,
                       properties: {
                         name: { type: :string },
@@ -47,7 +47,7 @@ RSpec.describe Task do
 
       response '201', 'Task info' do
         let(:Authorization) { authenticated_header(user_create)[:Authorization] }
-        let(:task) { attributes_for(:task) }
+        let(:task) { { task: attributes_for(:task) } }
         schema(JSON.parse(File.read('spec/support/api/v1/schemas/task/create.json')))
         run_test!
       end
@@ -65,15 +65,15 @@ RSpec.describe Task do
 
     put 'Update the Task' do
       tags 'Tasks'
+      consumes 'application/json'
       produces 'application/json'
-      consumes 'multipart/form-data'
       parameter name: :id, in: :path, type: :integer
       parameter name: 'Authorization', in: :header, type: :string, required: false
-      parameter name: :task, in: :formData, required: false,
+      parameter name: :task, in: :body, required: false,
                 schema: {
                   type: :object,
                   properties: {
-                    project: {
+                    task: {
                       type: :object,
                       properties: {
                         name: { type: :string },
@@ -86,7 +86,7 @@ RSpec.describe Task do
 
       response '200', 'Task updated' do
         let(:Authorization) { authenticated_header(user_create)[:Authorization] }
-        let(:task) { attributes_for(:task) }
+        let(:task) { { task: attributes_for(:task) } }
         schema(JSON.parse(File.read('spec/support/api/v1/schemas/task/create.json')))
         run_test!
       end
@@ -98,8 +98,8 @@ RSpec.describe Task do
 
     delete 'Delete the Task' do
       tags 'Tasks'
+      consumes 'application/json'
       produces 'application/json'
-      consumes 'multipart/form-data'
       parameter name: :id, in: :path, type: :integer
       parameter name: 'Authorization', in: :header, type: :string, required: false
 

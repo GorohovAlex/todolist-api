@@ -1,7 +1,7 @@
 {
 	"definitions": {},
 	"$schema": "http://json-schema.org/draft-07/schema#", 
-	"$id": "https://example.com/object1590073713.json", 
+	"$id": "https://example.com/object1590410268.json", 
 	"title": "Root", 
 	"type": "object",
 	"required": [
@@ -35,7 +35,7 @@
 					"type": "string",
 					"default": "",
 					"examples": [
-						"1"
+						"5"
 					],
 					"pattern": "^.*$"
 				},
@@ -66,7 +66,7 @@
 							"title": "Task-id", 
 							"type": "integer",
 							"examples": [
-								1
+								2
 							],
 							"default": 0
 						},
@@ -75,15 +75,8 @@
 							"title": "Image", 
 							"type": "object",
 							"required": [
-								"url"
 							],
 							"properties": {
-								"url": {
-									"$id": "#root/data/attributes/image/url", 
-									"title": "Url", 
-									"type": "null",
-									"default": null
-								}
 							}
 						}
 ,
@@ -93,7 +86,7 @@
 							"type": "string",
 							"default": "",
 							"examples": [
-								"2020-05-21T15:08:21.171Z"
+								"2020-05-25T12:37:38.480Z"
 							],
 							"pattern": "^.*$"
 						},
@@ -103,7 +96,7 @@
 							"type": "string",
 							"default": "",
 							"examples": [
-								"2020-05-21T15:08:21.171Z"
+								"2020-05-25T12:37:38.480Z"
 							],
 							"pattern": "^.*$"
 						}
@@ -124,7 +117,7 @@
 							"type": "string",
 							"default": "",
 							"examples": [
-								"/api/v1/task-comments/1"
+								"/api/v1/task-comments/5"
 							],
 							"pattern": "^.*$"
 						}

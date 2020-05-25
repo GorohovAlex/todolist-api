@@ -6,8 +6,8 @@ RSpec.describe Project do
   path '/api/v1/projects' do
     get 'A list of Projects' do
       tags 'Projects'
+      consumes 'application/json'
       produces 'application/json'
-      consumes 'multipart/form-data'
       parameter name: 'Authorization', in: :header, type: :string, required: false
 
       response '200', 'A list of Projects' do
@@ -23,10 +23,10 @@ RSpec.describe Project do
 
     post 'Creates a Project' do
       tags 'Projects'
+      consumes 'application/json'
       produces 'application/json'
-      consumes 'multipart/form-data'
       parameter name: 'Authorization', in: :header, type: :string, required: false
-      parameter name: :project, in: :formData, required: false,
+      parameter name: :project, in: :body, required: false,
                 schema: {
                   type: :object,
                   properties: {
@@ -41,7 +41,7 @@ RSpec.describe Project do
 
       response '201', 'Project info' do
         let(:Authorization) { authenticated_header(user_create)[:Authorization] }
-        let(:project) { attributes_for(:project) }
+        let(:project) { { project: attributes_for(:project) } }
         schema(JSON.parse(File.read('spec/support/api/v1/schemas/project/create.json')))
         run_test!
       end
@@ -58,11 +58,11 @@ RSpec.describe Project do
 
     put 'Update the Project' do
       tags 'Projects'
+      consumes 'application/json'
       produces 'application/json'
-      consumes 'multipart/form-data'
       parameter name: :id, in: :path, type: :integer
       parameter name: 'Authorization', in: :header, type: :string, required: false
-      parameter name: :project, in: :formData, required: false,
+      parameter name: :project, in: :body, required: false,
                 schema: {
                   type: :object,
                   properties: {
@@ -77,7 +77,7 @@ RSpec.describe Project do
 
       response '200', 'Project updated' do
         let(:Authorization) { authenticated_header(user_create)[:Authorization] }
-        let(:project) { attributes_for(:project) }
+        let(:project) { { project: attributes_for(:project) } }
         schema(JSON.parse(File.read('spec/support/api/v1/schemas/project/create.json')))
         run_test!
       end
@@ -89,8 +89,8 @@ RSpec.describe Project do
 
     delete 'Delete the Project' do
       tags 'Projects'
+      consumes 'application/json'
       produces 'application/json'
-      consumes 'multipart/form-data'
       parameter name: :id, in: :path, type: :integer
       parameter name: 'Authorization', in: :header, type: :string, required: false
 

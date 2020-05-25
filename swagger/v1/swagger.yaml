@@ -4,6 +4,12 @@
     "title": "API V1",
     "version": "v1"
   },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
   "paths": {
     "/api/v1/projects": {
       "get": {
@@ -311,7 +317,7 @@
         },
         "requestBody": {
           "content": {
-            "multipart/form-data": {
+            "application/json": {
               "schema": {
                 "type": "object",
                 "properties": {
@@ -488,7 +494,7 @@
         },
         "requestBody": {
           "content": {
-            "multipart/form-data": {
+            "application/json": {
               "schema": {
                 "type": "object",
                 "properties": {
@@ -643,6 +649,23 @@
             "content": {
             }
           }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -709,7 +732,7 @@
                   "definitions": {
                   },
                   "$schema": "http://json-schema.org/draft-07/schema#",
-                  "$id": "https://example.com/object1590073759.json",
+                  "$id": "https://example.com/object1590410134.json",
                   "title": "Root",
                   "type": "object",
                   "required": [
@@ -750,7 +773,7 @@
                             "type": "string",
                             "default": "",
                             "examples": [
-                              "1"
+                              "3"
                             ],
                             "pattern": "^.*$"
                           },
@@ -781,7 +804,7 @@
                                 "title": "Task-id",
                                 "type": "integer",
                                 "examples": [
-                                  1
+                                  2
                                 ],
                                 "default": 0
                               },
@@ -796,8 +819,12 @@
                                   "url": {
                                     "$id": "#root/data/items/attributes/image/url",
                                     "title": "Url",
-                                    "type": "null",
-                                    "default": null
+                                    "type": "string",
+                                    "default": "",
+                                    "examples": [
+                                      ""
+                                    ],
+                                    "pattern": "^.*$"
                                   }
                                 }
                               },
@@ -807,7 +834,7 @@
                                 "type": "string",
                                 "default": "",
                                 "examples": [
-                                  "2020-05-21T15:08:21.171Z"
+                                  "2020-05-25T12:30:02.992Z"
                                 ],
                                 "pattern": "^.*$"
                               },
@@ -817,7 +844,7 @@
                                 "type": "string",
                                 "default": "",
                                 "examples": [
-                                  "2020-05-21T15:08:21.171Z"
+                                  "2020-05-25T12:30:02.992Z"
                                 ],
                                 "pattern": "^.*$"
                               }
@@ -837,7 +864,7 @@
                                 "type": "string",
                                 "default": "",
                                 "examples": [
-                                  "/api/v1/task-comments/1"
+                                  "/api/v1/task-comments/3"
                                 ],
                                 "pattern": "^.*$"
                               }
@@ -890,7 +917,7 @@
                   "definitions": {
                   },
                   "$schema": "http://json-schema.org/draft-07/schema#",
-                  "$id": "https://example.com/object1590073713.json",
+                  "$id": "https://example.com/object1590410268.json",
                   "title": "Root",
                   "type": "object",
                   "required": [
@@ -924,7 +951,7 @@
                           "type": "string",
                           "default": "",
                           "examples": [
-                            "1"
+                            "5"
                           ],
                           "pattern": "^.*$"
                         },
@@ -955,7 +982,7 @@
                               "title": "Task-id",
                               "type": "integer",
                               "examples": [
-                                1
+                                2
                               ],
                               "default": 0
                             },
@@ -964,15 +991,9 @@
                               "title": "Image",
                               "type": "object",
                               "required": [
-                                "url"
+
                               ],
                               "properties": {
-                                "url": {
-                                  "$id": "#root/data/attributes/image/url",
-                                  "title": "Url",
-                                  "type": "null",
-                                  "default": null
-                                }
                               }
                             },
                             "created-at": {
@@ -981,7 +1002,7 @@
                               "type": "string",
                               "default": "",
                               "examples": [
-                                "2020-05-21T15:08:21.171Z"
+                                "2020-05-25T12:37:38.480Z"
                               ],
                               "pattern": "^.*$"
                             },
@@ -991,7 +1012,7 @@
                               "type": "string",
                               "default": "",
                               "examples": [
-                                "2020-05-21T15:08:21.171Z"
+                                "2020-05-25T12:37:38.480Z"
                               ],
                               "pattern": "^.*$"
                             }
@@ -1011,7 +1032,7 @@
                               "type": "string",
                               "default": "",
                               "examples": [
-                                "/api/v1/task-comments/1"
+                                "/api/v1/task-comments/5"
                               ],
                               "pattern": "^.*$"
                             }
@@ -1032,7 +1053,7 @@
         },
         "requestBody": {
           "content": {
-            "multipart/form-data": {
+            "application/json": {
               "schema": {
                 "type": "object",
                 "properties": {
@@ -1452,11 +1473,11 @@
         },
         "requestBody": {
           "content": {
-            "multipart/form-data": {
+            "application/json": {
               "schema": {
                 "type": "object",
                 "properties": {
-                  "project": {
+                  "task": {
                     "type": "object",
                     "properties": {
                       "name": {
@@ -1659,11 +1680,11 @@
         },
         "requestBody": {
           "content": {
-            "multipart/form-data": {
+            "application/json": {
               "schema": {
                 "type": "object",
                 "properties": {
-                  "project": {
+                  "task": {
                     "type": "object",
                     "properties": {
                       "name": {
@@ -1856,7 +1877,7 @@
         },
         "requestBody": {
           "content": {
-            "multipart/form-data": {
+            "application/json": {
               "schema": {
                 "type": "object",
                 "properties": {
