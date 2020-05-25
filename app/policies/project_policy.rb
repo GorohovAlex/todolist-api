@@ -11,6 +11,10 @@ class ProjectPolicy < ApplicationPolicy
     record.user.eql?(user)
   end
 
+  def show?
+    record.user.eql?(user)
+  end
+
   def destroy?
     update?
   end
