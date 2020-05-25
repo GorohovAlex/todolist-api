@@ -3,7 +3,7 @@ module ApplicationExceptions
 
   included do
     rescue_from JWTSessions::Errors::Unauthorized, with: :not_authorized
-    rescue_from ActiveRecord::RecordNotFound, with: :not_found  
+    rescue_from ActiveRecord::RecordNotFound, with: :not_found
   end
 
   def not_authorized
