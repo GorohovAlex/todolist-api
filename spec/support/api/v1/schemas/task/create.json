@@ -1,7 +1,7 @@
 {
 	"definitions": {},
 	"$schema": "http://json-schema.org/draft-07/schema#", 
-	"$id": "https://example.com/object1590072037.json", 
+	"$id": "https://example.com/object1590475573.json", 
 	"title": "Root", 
 	"type": "object",
 	"required": [
@@ -35,7 +35,7 @@
 					"type": "string",
 					"default": "",
 					"examples": [
-						"2"
+						"6"
 					],
 					"pattern": "^.*$"
 				},
@@ -77,7 +77,7 @@
 							"type": "string",
 							"default": "",
 							"examples": [
-								"2020-05-21T14:39:52.942Z"
+								""
 							],
 							"pattern": "^.*$"
 						},
@@ -86,7 +86,7 @@
 							"title": "Position", 
 							"type": "integer",
 							"examples": [
-								2
+								5
 							],
 							"default": 0
 						},
@@ -96,7 +96,7 @@
 							"type": "string",
 							"default": "",
 							"examples": [
-								"2020-05-21T14:40:27.415Z"
+								"2020-05-26T06:45:59.040Z"
 							],
 							"pattern": "^.*$"
 						},
@@ -106,7 +106,7 @@
 							"type": "string",
 							"default": "",
 							"examples": [
-								"2020-05-21T14:40:27.415Z"
+								"2020-05-26T06:45:59.040Z"
 							],
 							"pattern": "^.*$"
 						}
@@ -127,7 +127,7 @@
 							"type": "string",
 							"default": "",
 							"examples": [
-								"/api/v1/tasks/2"
+								"/api/v1/tasks/6"
 							],
 							"pattern": "^.*$"
 						}

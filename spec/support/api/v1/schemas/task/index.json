@@ -1,7 +1,7 @@
 {
 	"definitions": {},
 	"$schema": "http://json-schema.org/draft-07/schema#", 
-	"$id": "https://example.com/object1590070686.json", 
+	"$id": "https://example.com/object1590475526.json", 
 	"title": "Root", 
 	"type": "object",
 	"required": [
@@ -40,7 +40,7 @@
 						"type": "string",
 						"default": "",
 						"examples": [
-							"1"
+							"2"
 						],
 						"pattern": "^.*$"
 					},
@@ -79,15 +79,19 @@
 							"deadline": {
 								"$id": "#root/data/items/attributes/deadline", 
 								"title": "Deadline", 
-								"type": "null",
-								"default": null
+								"type": "string",
+								"default": "",
+								"examples": [
+									"2020-05-21T14:39:52.942Z"
+								],
+								"pattern": "^.*$"
 							},
 							"position": {
 								"$id": "#root/data/items/attributes/position", 
 								"title": "Position", 
 								"type": "integer",
 								"examples": [
-									1
+									2
 								],
 								"default": 0
 							},
@@ -97,7 +101,7 @@
 								"type": "string",
 								"default": "",
 								"examples": [
-									"2020-05-21T14:17:00.883Z"
+									"2020-05-21T14:40:27.415Z"
 								],
 								"pattern": "^.*$"
 							},
@@ -107,7 +111,7 @@
 								"type": "string",
 								"default": "",
 								"examples": [
-									"2020-05-21T14:17:00.883Z"
+									"2020-05-21T14:40:27.415Z"
 								],
 								"pattern": "^.*$"
 							}
@@ -128,7 +132,7 @@
 								"type": "string",
 								"default": "",
 								"examples": [
-									"/api/v1/tasks/1"
+									"/api/v1/tasks/2"
 								],
 								"pattern": "^.*$"
 							}
