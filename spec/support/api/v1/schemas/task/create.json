@@ -1,188 +1,141 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "http://example.com/example.json",
-    "type": "object",
-    "title": "The root schema",
-    "description": "The root schema comprises the entire JSON document.",
-    "default": {},
-    "examples": [
-        {
-            "data": {
-                "type": "tasks",
-                "id": "1",
-                "attributes": {
-                    "name": "smile",
-                    "state": false,
-                    "deadline": null,
-                    "created-at": "2020-05-18T19:48:24.141Z",
-                    "updated-at": "2020-05-18T19:48:24.141Z"
-                },
-                "links": {
-                    "self": "/api/v1/tasks/1"
-                }
-            }
-        }
-    ],
-    "required": [
-        "data"
-    ],
-    "additionalProperties": true,
-    "properties": {
-        "data": {
-            "$id": "#/properties/data",
-            "type": "object",
-            "title": "The data schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": {},
-            "examples": [
-                {
-                    "type": "tasks",
-                    "id": "1",
-                    "attributes": {
-                        "name": "smile",
-                        "state": false,
-                        "deadline": null,
-                        "created-at": "2020-05-18T19:48:24.141Z",
-                        "updated-at": "2020-05-18T19:48:24.141Z"
-                    },
-                    "links": {
-                        "self": "/api/v1/tasks/1"
-                    }
-                }
-            ],
-            "required": [
-                "type",
-                "id",
-                "attributes",
-                "links"
-            ],
-            "additionalProperties": true,
-            "properties": {
-                "type": {
-                    "$id": "#/properties/data/properties/type",
-                    "type": "string",
-                    "title": "The type schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": "",
-                    "examples": [
-                        "tasks"
-                    ]
-                },
-                "id": {
-                    "$id": "#/properties/data/properties/id",
-                    "type": "string",
-                    "title": "The id schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": "",
-                    "examples": [
-                        "1"
-                    ]
-                },
-                "attributes": {
-                    "$id": "#/properties/data/properties/attributes",
-                    "type": "object",
-                    "title": "The attributes schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": {},
-                    "examples": [
-                        {
-                            "name": "smile",
-                            "state": false,
-                            "deadline": null,
-                            "created-at": "2020-05-18T19:48:24.141Z",
-                            "updated-at": "2020-05-18T19:48:24.141Z"
-                        }
-                    ],
-                    "required": [
-                        "name",
-                        "state",
-                        "deadline",
-                        "created-at",
-                        "updated-at"
-                    ],
-                    "additionalProperties": true,
-                    "properties": {
-                        "name": {
-                            "$id": "#/properties/data/properties/attributes/properties/name",
-                            "type": "string",
-                            "title": "The name schema",
-                            "description": "An explanation about the purpose of this instance.",
-                            "default": "",
-                            "examples": [
-                                "smile"
-                            ]
-                        },
-                        "state": {
-                            "$id": "#/properties/data/properties/attributes/properties/state",
-                            "type": "boolean",
-                            "title": "The state schema",
-                            "description": "An explanation about the purpose of this instance.",
-                            "default": false,
-                            "examples": [
-                                false
-                            ]
-                        },
-                        "deadline": {
-                            "$id": "#/properties/data/properties/attributes/properties/deadline",
-                            "type": "null",
-                            "title": "The deadline schema",
-                            "description": "An explanation about the purpose of this instance.",
-                            "default": null,
-                            "examples": [
-                                null
-                            ]
-                        },
-                        "created-at": {
-                            "$id": "#/properties/data/properties/attributes/properties/created-at",
-                            "type": "string",
-                            "title": "The created-at schema",
-                            "description": "An explanation about the purpose of this instance.",
-                            "default": "",
-                            "examples": [
-                                "2020-05-18T19:48:24.141Z"
-                            ]
-                        },
-                        "updated-at": {
-                            "$id": "#/properties/data/properties/attributes/properties/updated-at",
-                            "type": "string",
-                            "title": "The updated-at schema",
-                            "description": "An explanation about the purpose of this instance.",
-                            "default": "",
-                            "examples": [
-                                "2020-05-18T19:48:24.141Z"
-                            ]
-                        }
-                    }
-                },
-                "links": {
-                    "$id": "#/properties/data/properties/links",
-                    "type": "object",
-                    "title": "The links schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": {},
-                    "examples": [
-                        {
-                            "self": "/api/v1/tasks/1"
-                        }
-                    ],
-                    "required": [
-                        "self"
-                    ],
-                    "additionalProperties": true,
-                    "properties": {
-                        "self": {
-                            "$id": "#/properties/data/properties/links/properties/self",
-                            "type": "string",
-                            "title": "The self schema",
-                            "description": "An explanation about the purpose of this instance.",
-                            "default": "",
-                            "examples": [
-                                "/api/v1/tasks/1"
-                            ]
-                        }
-                    }
-                }
-            }
-        }
-    }
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#", 
+	"$id": "https://example.com/object1590475573.json", 
+	"title": "Root", 
+	"type": "object",
+	"required": [
+		"data"
+	],
+	"properties": {
+		"data": {
+			"$id": "#root/data", 
+			"title": "Data", 
+			"type": "object",
+			"required": [
+				"type",
+				"id",
+				"attributes",
+				"links"
+			],
+			"properties": {
+				"type": {
+					"$id": "#root/data/type", 
+					"title": "Type", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"tasks"
+					],
+					"pattern": "^.*$"
+				},
+				"id": {
+					"$id": "#root/data/id", 
+					"title": "Id", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"6"
+					],
+					"pattern": "^.*$"
+				},
+				"attributes": {
+					"$id": "#root/data/attributes", 
+					"title": "Attributes", 
+					"type": "object",
+					"required": [
+						"name",
+						"state",
+						"deadline",
+						"position",
+						"created-at",
+						"updated-at"
+					],
+					"properties": {
+						"name": {
+							"$id": "#root/data/attributes/name", 
+							"title": "Name", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"smile"
+							],
+							"pattern": "^.*$"
+						},
+						"state": {
+							"$id": "#root/data/attributes/state", 
+							"title": "State", 
+							"type": "boolean",
+							"examples": [
+								false
+							],
+							"default": true
+						},
+						"deadline": {
+							"$id": "#root/data/attributes/deadline", 
+							"title": "Deadline", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								""
+							],
+							"pattern": "^.*$"
+						},
+						"position": {
+							"$id": "#root/data/attributes/position", 
+							"title": "Position", 
+							"type": "integer",
+							"examples": [
+								5
+							],
+							"default": 0
+						},
+						"created-at": {
+							"$id": "#root/data/attributes/created-at", 
+							"title": "Created-at", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"2020-05-26T06:45:59.040Z"
+							],
+							"pattern": "^.*$"
+						},
+						"updated-at": {
+							"$id": "#root/data/attributes/updated-at", 
+							"title": "Updated-at", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"2020-05-26T06:45:59.040Z"
+							],
+							"pattern": "^.*$"
+						}
+					}
+				}
+,
+				"links": {
+					"$id": "#root/data/links", 
+					"title": "Links", 
+					"type": "object",
+					"required": [
+						"self"
+					],
+					"properties": {
+						"self": {
+							"$id": "#root/data/links/self", 
+							"title": "Self", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"/api/v1/tasks/6"
+							],
+							"pattern": "^.*$"
+						}
+					}
+				}
+
+			}
+		}
+
+	}
 }

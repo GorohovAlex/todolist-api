@@ -7,22 +7,25 @@ RSpec.describe Session do
   path '/api/v1/auth/sign_in' do
     post 'Sign In' do
       tags 'Authentication'
+      consumes 'application/json'
       produces 'application/json'
-      consumes 'multipart/form-data'
-      parameter name: :username, in: :formData
-      parameter name: :password, in: :formData
+      parameter name: :user, in: :body, schema: {
+        type: :object,
+        properties: {
+          username: { type: :string },
+          password: { type: :string }
+        }
+      }
 
       response '200', 'User information' do
-        let(:username) { user_params[:username] }
-        let(:password) { user_params[:password] }
+        let(:user) { user_params }
         schema(JSON.parse(File.read('spec/support/api/v1/schemas/session/create.json')))
 
         run_test!
       end
 
       response '401', 'Invalid login credentials' do
-        let(:username) { user_create.username }
-        let(:password) { '' }
+        let(:user) { user_create }
         run_test!
       end
     end

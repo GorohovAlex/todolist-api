@@ -1,7 +1,7 @@
 {
 	"definitions": {},
 	"$schema": "http://json-schema.org/draft-07/schema#", 
-	"$id": "https://example.com/object1590050011.json", 
+	"$id": "https://example.com/object1590067403.json", 
 	"title": "Root", 
 	"type": "object",
 	"required": [
@@ -35,7 +35,7 @@
 					"type": "string",
 					"default": "",
 					"examples": [
-						"6"
+						"1"
 					],
 					"pattern": "^.*$"
 				},
@@ -45,6 +45,7 @@
 					"type": "object",
 					"required": [
 						"name",
+						"user-id",
 						"created-at",
 						"updated-at"
 					],
@@ -59,13 +60,22 @@
 							],
 							"pattern": "^.*$"
 						},
+						"user-id": {
+							"$id": "#root/data/attributes/user-id", 
+							"title": "User-id", 
+							"type": "integer",
+							"examples": [
+								1
+							],
+							"default": 0
+						},
 						"created-at": {
 							"$id": "#root/data/attributes/created-at", 
 							"title": "Created-at", 
 							"type": "string",
 							"default": "",
 							"examples": [
-								"2020-05-21T08:28:17.510Z"
+								"2020-05-21T13:23:03.498Z"
 							],
 							"pattern": "^.*$"
 						},
@@ -75,7 +85,7 @@
 							"type": "string",
 							"default": "",
 							"examples": [
-								"2020-05-21T08:28:17.510Z"
+								"2020-05-21T13:23:03.498Z"
 							],
 							"pattern": "^.*$"
 						}
@@ -96,7 +106,7 @@
 							"type": "string",
 							"default": "",
 							"examples": [
-								"/api/v1/projects/6"
+								"/api/v1/projects/1"
 							],
 							"pattern": "^.*$"
 						}
