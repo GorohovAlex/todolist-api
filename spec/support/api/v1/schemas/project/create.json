@@ -1,0 +1,120 @@
+{
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#", 
+	"$id": "https://example.com/object1590067403.json", 
+	"title": "Root", 
+	"type": "object",
+	"required": [
+		"data"
+	],
+	"properties": {
+		"data": {
+			"$id": "#root/data", 
+			"title": "Data", 
+			"type": "object",
+			"required": [
+				"type",
+				"id",
+				"attributes",
+				"links"
+			],
+			"properties": {
+				"type": {
+					"$id": "#root/data/type", 
+					"title": "Type", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"projects"
+					],
+					"pattern": "^.*$"
+				},
+				"id": {
+					"$id": "#root/data/id", 
+					"title": "Id", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"1"
+					],
+					"pattern": "^.*$"
+				},
+				"attributes": {
+					"$id": "#root/data/attributes", 
+					"title": "Attributes", 
+					"type": "object",
+					"required": [
+						"name",
+						"user-id",
+						"created-at",
+						"updated-at"
+					],
+					"properties": {
+						"name": {
+							"$id": "#root/data/attributes/name", 
+							"title": "Name", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"project4"
+							],
+							"pattern": "^.*$"
+						},
+						"user-id": {
+							"$id": "#root/data/attributes/user-id", 
+							"title": "User-id", 
+							"type": "integer",
+							"examples": [
+								1
+							],
+							"default": 0
+						},
+						"created-at": {
+							"$id": "#root/data/attributes/created-at", 
+							"title": "Created-at", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"2020-05-21T13:23:03.498Z"
+							],
+							"pattern": "^.*$"
+						},
+						"updated-at": {
+							"$id": "#root/data/attributes/updated-at", 
+							"title": "Updated-at", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"2020-05-21T13:23:03.498Z"
+							],
+							"pattern": "^.*$"
+						}
+					}
+				}
+,
+				"links": {
+					"$id": "#root/data/links", 
+					"title": "Links", 
+					"type": "object",
+					"required": [
+						"self"
+					],
+					"properties": {
+						"self": {
+							"$id": "#root/data/links/self", 
+							"title": "Self", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"/api/v1/projects/1"
+							],
+							"pattern": "^.*$"
+						}
+					}
+				}
+
+			}
+		}
+
+	}
+}

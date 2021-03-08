@@ -1,0 +1,141 @@
+{
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#", 
+	"$id": "https://example.com/object1590475573.json", 
+	"title": "Root", 
+	"type": "object",
+	"required": [
+		"data"
+	],
+	"properties": {
+		"data": {
+			"$id": "#root/data", 
+			"title": "Data", 
+			"type": "object",
+			"required": [
+				"type",
+				"id",
+				"attributes",
+				"links"
+			],
+			"properties": {
+				"type": {
+					"$id": "#root/data/type", 
+					"title": "Type", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"tasks"
+					],
+					"pattern": "^.*$"
+				},
+				"id": {
+					"$id": "#root/data/id", 
+					"title": "Id", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"6"
+					],
+					"pattern": "^.*$"
+				},
+				"attributes": {
+					"$id": "#root/data/attributes", 
+					"title": "Attributes", 
+					"type": "object",
+					"required": [
+						"name",
+						"state",
+						"deadline",
+						"position",
+						"created-at",
+						"updated-at"
+					],
+					"properties": {
+						"name": {
+							"$id": "#root/data/attributes/name", 
+							"title": "Name", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"smile"
+							],
+							"pattern": "^.*$"
+						},
+						"state": {
+							"$id": "#root/data/attributes/state", 
+							"title": "State", 
+							"type": "boolean",
+							"examples": [
+								false
+							],
+							"default": true
+						},
+						"deadline": {
+							"$id": "#root/data/attributes/deadline", 
+							"title": "Deadline", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								""
+							],
+							"pattern": "^.*$"
+						},
+						"position": {
+							"$id": "#root/data/attributes/position", 
+							"title": "Position", 
+							"type": "integer",
+							"examples": [
+								5
+							],
+							"default": 0
+						},
+						"created-at": {
+							"$id": "#root/data/attributes/created-at", 
+							"title": "Created-at", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"2020-05-26T06:45:59.040Z"
+							],
+							"pattern": "^.*$"
+						},
+						"updated-at": {
+							"$id": "#root/data/attributes/updated-at", 
+							"title": "Updated-at", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"2020-05-26T06:45:59.040Z"
+							],
+							"pattern": "^.*$"
+						}
+					}
+				}
+,
+				"links": {
+					"$id": "#root/data/links", 
+					"title": "Links", 
+					"type": "object",
+					"required": [
+						"self"
+					],
+					"properties": {
+						"self": {
+							"$id": "#root/data/links/self", 
+							"title": "Self", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"/api/v1/tasks/6"
+							],
+							"pattern": "^.*$"
+						}
+					}
+				}
+
+			}
+		}
+
+	}
+}

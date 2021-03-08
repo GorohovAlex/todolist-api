@@ -1,0 +1,131 @@
+{
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#", 
+	"$id": "https://example.com/object1590410268.json", 
+	"title": "Root", 
+	"type": "object",
+	"required": [
+		"data"
+	],
+	"properties": {
+		"data": {
+			"$id": "#root/data", 
+			"title": "Data", 
+			"type": "object",
+			"required": [
+				"type",
+				"id",
+				"attributes",
+				"links"
+			],
+			"properties": {
+				"type": {
+					"$id": "#root/data/type", 
+					"title": "Type", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"task-comments"
+					],
+					"pattern": "^.*$"
+				},
+				"id": {
+					"$id": "#root/data/id", 
+					"title": "Id", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"5"
+					],
+					"pattern": "^.*$"
+				},
+				"attributes": {
+					"$id": "#root/data/attributes", 
+					"title": "Attributes", 
+					"type": "object",
+					"required": [
+						"comment",
+						"task-id",
+						"image",
+						"created-at",
+						"updated-at"
+					],
+					"properties": {
+						"comment": {
+							"$id": "#root/data/attributes/comment", 
+							"title": "Comment", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"text"
+							],
+							"pattern": "^.*$"
+						},
+						"task-id": {
+							"$id": "#root/data/attributes/task-id", 
+							"title": "Task-id", 
+							"type": "integer",
+							"examples": [
+								2
+							],
+							"default": 0
+						},
+						"image": {
+							"$id": "#root/data/attributes/image", 
+							"title": "Image", 
+							"type": "object",
+							"required": [
+							],
+							"properties": {
+							}
+						}
+,
+						"created-at": {
+							"$id": "#root/data/attributes/created-at", 
+							"title": "Created-at", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"2020-05-25T12:37:38.480Z"
+							],
+							"pattern": "^.*$"
+						},
+						"updated-at": {
+							"$id": "#root/data/attributes/updated-at", 
+							"title": "Updated-at", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"2020-05-25T12:37:38.480Z"
+							],
+							"pattern": "^.*$"
+						}
+					}
+				}
+,
+				"links": {
+					"$id": "#root/data/links", 
+					"title": "Links", 
+					"type": "object",
+					"required": [
+						"self"
+					],
+					"properties": {
+						"self": {
+							"$id": "#root/data/links/self", 
+							"title": "Self", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"/api/v1/task-comments/5"
+							],
+							"pattern": "^.*$"
+						}
+					}
+				}
+
+			}
+		}
+
+	}
+}

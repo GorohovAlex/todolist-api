@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  database: <%= Rails.application.credentials.pg[:database] %>
+  username: <%= Rails.application.credentials.pg[:username] %>
+  password: <%= Rails.application.credentials.pg[:password] %>
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  port: <%= Rails.application.credentials.pg[:port] %>
+  host: <%= Rails.application.credentials.pg[:host] %>
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
+  database: todolist_api_production

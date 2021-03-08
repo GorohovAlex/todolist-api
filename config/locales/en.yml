@@ -1,0 +1,7 @@
+en:
+  hello: "Hello world"
+  errors:
+    password_missmatch: Password mismatch
+    username_and_password: Invalid username or password
+    invalid_project_id: Invalid project_id
+    deadline: Must be a valid datetime
